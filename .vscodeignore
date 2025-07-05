@@ -1,0 +1,13 @@
+node_modules
+.vscode
+.vscode-test
+test/
+*.log
+*.bak
+*.tmp
+*.zip
+*.tar.gz
+*.7z
+*.psd
+Thumbs.db
+desktop.ini

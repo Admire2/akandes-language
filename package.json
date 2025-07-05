@@ -1,0 +1,35 @@
+{
+  "name": "akandes-language",
+  "displayName": "Akandes Language",
+  "description": "Front-end HDL for adaptive semiconductor systems with AkandeAI integration.",
+  "version": "0.0.1",
+  "publisher": "Admire2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Admire2/akandes-language"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "akandes",
+        "aliases": ["Akandes", "ak"],
+        "extensions": [".ak"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "akandes",
+        "scopeName": "source.akandes",
+        "path": "./syntaxes/akandes.tmLanguage.json"
+      }
+    ]
+  }
+}
+
