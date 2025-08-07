@@ -1,0 +1,17 @@
+{
+  "Print Statement": {
+    "prefix": "print",
+    "body": ["print('$1')"],
+    "description": "Print statement"
+  },
+  "Function Definition": {
+    "prefix": "def",
+    "body": ["def $1($2):", "    $0"],
+    "description": "Function definition"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": ["if $1:", "    $0"],
+    "description": "If statement"
+  }
+}

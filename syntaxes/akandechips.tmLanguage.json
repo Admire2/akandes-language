@@ -1,0 +1,15 @@
+{
+  "scopeName": "source.akandechips",
+  "name": "AkandeChips",
+  "patterns": [
+    { "name": "comment.line.number-sign.akandechips", "match": "#.*$" },
+    { "name": "keyword.control.akandechips", "match": "\\b(if|else|for|while|return|def|class)\\b" },
+    { "name": "string.quoted.double.akandechips", "begin": "\"", "end": "\"" },
+    { "name": "string.quoted.single.akandechips", "begin": "'", "end": "'" },
+    { "name": "constant.numeric.akandechips", "match": "\\b\\d+\\b" },
+    { "name": "variable.akandechips", "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b" }
+  ],
+  "repository": {},
+  "fileTypes": ["akande", "chips"],
+  "uuid": "b1e1e1e1-1111-1111-1111-111111111111"
+}

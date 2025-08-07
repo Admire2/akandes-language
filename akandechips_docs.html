@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>README</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="akandechips-language-documentation">AkandeChips Language
+Documentation</h1>
+<p>Welcome to the official documentation for the AkandeChips language.
+This guide is designed for all levels, from beginners to advanced users,
+and is compatible with any text editor. Use the navigation below to
+explore topics, copy code, and learn best practices.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="./introduction.md">Introduction</a></li>
+<li><a href="./getting_started.md">Getting Started</a></li>
+<li><a href="./syntax.md">Language Syntax</a></li>
+<li><a href="./functions.md">Functions &amp; Built-ins</a></li>
+<li><a href="./advanced.md">Advanced Features</a></li>
+<li><a href="./examples.md">Examples</a></li>
+<li><a href="./best_practices.md">Best Practices</a></li>
+<li><a href="./faq.md">FAQ</a></li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>Tip:</strong> All documentation is in Markdown for easy
+reading, searching, and copying in VS Code and other editors.</p>
+</blockquote>
+<h1 id="introduction">Introduction</h1>
+<p>AkandeChips is a modern, flexible programming language designed for
+both hardware and software co-design. Inspired by Python and hardware
+description languages (HDLs), AkandeChips aims to be easy to learn,
+powerful, and compatible with a wide range of tools and editors.</p>
+<h2 id="why-akandechips">Why AkandeChips?</h2>
+<ul>
+<li>Simple, readable syntax</li>
+<li>Supports both software and hardware constructs</li>
+<li>Easily integrates with existing workflows</li>
+<li>Open and extensible</li>
+</ul>
+<h2 id="who-is-this-for">Who is this for?</h2>
+<ul>
+<li>Students and educators</li>
+<li>Hardware and software engineers</li>
+<li>Hobbyists and makers</li>
+</ul>
+<hr />
+<p>Continue to <a href="./getting_started.md">Getting Started</a> to
+write your first program.</p>
+<h1 id="getting-started">Getting Started</h1>
+<p>This section will help you set up your environment and write your
+first AkandeChips program.</p>
+<h2 id="installation">Installation</h2>
+<ol type="1">
+<li>Download and install the AkandeChips extension for VS Code.</li>
+<li>(Optional) Install Python 3.8+ for backend features.</li>
+<li>Open or create a <code>.chips</code> or <code>.akande</code> file in
+VS Code.</li>
+</ol>
+<h2 id="your-first-program">Your First Program</h2>
+<pre class="akandechips"><code>print(&quot;Hello, AkandeChips!&quot;)</code></pre>
+<h2 id="running-your-program">Running Your Program</h2>
+<ul>
+<li>Use the command palette: <code>Run AkandeChips File</code></li>
+<li>Or run from terminal: <code>akandechips yourfile.chips</code></li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Explore <a href="./syntax.md">Language Syntax</a></li>
+<li>Try <a href="./beginner_tutorial.md">Beginner Tutorial</a></li>
+</ul>
+<h1 id="language-syntax">Language Syntax</h1>
+<h1 id="language-syntax-1">Language Syntax</h1>
+<p>AkandeChips syntax is designed to be familiar to Python users, with
+additional constructs for hardware design.</p>
+<h2 id="variables">Variables</h2>
+<pre class="akandechips"><code>a = 10
+b = 3.14
+c = &quot;hello&quot;</code></pre>
+<h2 id="data-types">Data Types</h2>
+<ul>
+<li>Integer: <code>a = 5</code></li>
+<li>Float: <code>b = 2.5</code></li>
+<li>String: <code>c = "text"</code></li>
+<li>Boolean: <code>flag = True</code></li>
+<li>List: <code>nums = [1, 2, 3]</code></li>
+</ul>
+<h2 id="operators">Operators</h2>
+<ul>
+<li>Arithmetic: <code>+</code>, <code>-</code>, <code>*</code>,
+<code>/</code>, <code>%</code></li>
+<li>Logical: <code>and</code>, <code>or</code>, <code>not</code></li>
+<li>Bitwise: <code>&amp;</code>, <code>|</code>, <code>^</code>,
+<code>~</code></li>
+</ul>
+<h2 id="control-flow">Control Flow</h2>
+<pre class="akandechips"><code>if a &gt; 5:
+    print(&quot;a is big&quot;)
+else:
+    print(&quot;a is small&quot;)
+
+for i in range(5):
+    print(i)</code></pre>
+<h2 id="comments">Comments</h2>
+<pre class="akandechips"><code># This is a comment</code></pre>
+<h1 id="functions-built-ins">Functions &amp; Built-ins</h1>
+<h1 id="functions-built-ins-1">Functions &amp; Built-ins</h1>
+<p>AkandeChips supports user-defined and built-in functions.</p>
+<h2 id="defining-functions">Defining Functions</h2>
+<pre class="akandechips"><code>def add(x, y):
+    return x + y</code></pre>
+<h2 id="calling-functions">Calling Functions</h2>
+<pre class="akandechips"><code>result = add(2, 3)
+print(result)</code></pre>
+<h2 id="built-in-functions">Built-in Functions</h2>
+<ul>
+<li><code>print(value)</code></li>
+<li><code>len(list)</code></li>
+<li><code>range(start, stop, step)</code></li>
+<li><code>type(obj)</code></li>
+</ul>
+<h2 id="lambda-functions">Lambda Functions</h2>
+<pre class="akandechips"><code>square = lambda x: x * x
+print(square(4))</code></pre>
+<h1 id="advanced-features">Advanced Features</h1>
+<p>Explore advanced AkandeChips features for power users and hardware
+designers.</p>
+<h2 id="modules">Modules</h2>
+<h2 id="error-handling">Error Handling</h2>
+<h2 id="interoperability">Interoperability</h2>
+<h2 id="modules-1">Modules</h2>
+<pre class="akandechips"><code>def greet(name):
+    print(&quot;Hello, &quot; + name)
+
+import mymodule
+greet(&quot;World&quot;)</code></pre>
+<h2 id="error-handling-1">Error Handling</h2>
+<pre class="akandechips"><code>try:
+    risky_operation()
+except Exception as e:
+    print(&quot;Error:&quot;, e)</code></pre>
+<h2 id="hardware-integration">Hardware Integration</h2>
+<pre class="akandechips"><code>module and_gate(input a, input b, output y):
+    y = a &amp; b</code></pre>
+<h1 id="examples">Examples</h1>
+<h1 id="examples-1">Examples</h1>
+<p>A collection of AkandeChips code examples.</p>
+<h2 id="beginner-example">Beginner Example</h2>
+<pre class="akandechips"><code># Print numbers 0 to 4
+for i in range(5):
+    print(i)</code></pre>
+<h2 id="intermediate-example">Intermediate Example</h2>
+<pre class="akandechips"><code># Function to check even/odd
+def is_even(n):
+    return n % 2 == 0
+
+print(is_even(10))</code></pre>
+<h2 id="advanced-example">Advanced Example</h2>
+<pre class="akandechips"><code># Simple AND gate module
+module and_gate(input a, input b, output y):
+    y = a &amp; b</code></pre>
+<h1 id="best-practices">Best Practices</h1>
+<h1 id="best-practices-1">Best Practices</h1>
+<p>Follow these guidelines to write clean, efficient, and maintainable
+AkandeChips code.</p>
+<h2 id="code-style">Code Style</h2>
+<ul>
+<li>Use clear, descriptive variable and function names</li>
+<li>Indent code consistently (4 spaces)</li>
+<li>Add comments to explain complex logic</li>
+</ul>
+<h2 id="performance">Performance</h2>
+<ul>
+<li>Avoid unnecessary computations in loops</li>
+<li>Use built-in functions where possible</li>
+</ul>
+<h2 id="readability">Readability</h2>
+<ul>
+<li>Break long code into functions or modules</li>
+<li>Keep lines under 80 characters</li>
+</ul>
+<h1 id="frequently-asked-questions-faq">Frequently Asked Questions
+(FAQ)</h1>
+<h1 id="frequently-asked-questions-faq-1">Frequently Asked Questions
+(FAQ)</h1>
+<p><strong>Q: What file extensions does AkandeChips use?</strong> A:
+<code>.chips</code>, <code>.akande</code>, <code>.v</code>,
+<code>.sv</code>, <code>.vhd</code>, <code>.vhd1</code>,
+<code>.project</code></p>
+<p><strong>Q: Can I use AkandeChips in other editors?</strong> A: Yes!
+All code and docs are plain text and Markdown, compatible with any
+editor.</p>
+<p><strong>Q: How do I run AkandeChips code?</strong> A: Use the VS Code
+extension or run from the terminal with
+<code>akandechips yourfile.chips</code>.</p>
+<p><strong>Q: Is AkandeChips open source?</strong> A: Yes, contributions
+are welcome!</p>
+<h1 id="akandechips-cheatsheet">AkandeChips Cheatsheet</h1>
+<p>Quick reference for common syntax and commands.</p>
+<h2 id="variables-1">Variables</h2>
+<pre class="akandechips"><code>a = 10
+b = 3.14
+c = &quot;hello&quot;</code></pre>
+<h2 id="functions">Functions</h2>
+<pre class="akandechips"><code>def add(x, y):
+    return x + y</code></pre>
+<h2 id="control-flow-1">Control Flow</h2>
+<pre class="akandechips"><code>if a &gt; 5:
+    print(&quot;big&quot;)
+else:
+    print(&quot;small&quot;)</code></pre>
+<h2 id="module-example">Module Example</h2>
+<pre class="akandechips"><code>module and_gate(input a, input b, output y):
+    y = a &amp; b</code></pre>
+</body>
+</html>

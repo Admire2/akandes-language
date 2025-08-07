@@ -1,0 +1,836 @@
+Sequence,Time,File,RangeOffset,RangeLength,Text,Language,Type
+1,5,"package.json",0,0,"{\n  ""name"": ""AkandeChips"",\n  ""displayName"": ""Akande"",\n  ""description"": ""Chips Programmimg Language"",\n  ""version"": ""0.0.1"",\n  ""engines"": {\n    ""vscode"": ""^1.102.0""\n  },\n  ""categories"": [\n    ""Other""\n  ],\n  ""activationEvents"": [],\n  ""main"": ""./dist/extension.js"",\n  ""contributes"": {\n    ""commands"": [\n      {\n        ""command"": ""AkandeChips.helloWorld"",\n        ""title"": ""Hello World""\n      }\n    ],\n    ""languages"": [\n      {\n        ""id"": ""akandechips"",\n        ""aliases"": [""AkandeChips"", ""akandechips""],\n        ""extensions"": ["".akande"", "".chips""],\n        ""configuration"": ""./language-configuration.json""\n      }\n    ],\n    ""grammars"": [\n      {\n        ""language"": ""akandechips"",\n        ""scopeName"": ""source.akandechips"",\n        ""path"": ""./syntaxes/akandechips.tmLanguage.json""\n      }\n    ],\n    ""snippets"": [\n      {\n        ""language"": ""akandechips"",\n        ""path"": ""./snippets/akandechips.code-snippets""\n      }\n    ]\n  },\n  ""scripts"": {\n    ""vscode:prepublish"": ""npm run package"",\n    ""compile"": ""webpack"",\n    ""watch"": ""webpack --watch"",\n    ""package"": ""webpack --mode production --devtool hidden-source-map"",\n    ""compile-tests"": ""tsc -p . --outDir out"",\n    ""watch-tests"": ""tsc -p . -w --outDir out"",\n    ""pretest"": ""npm run compile-tests && npm run compile && npm run lint"",\n    ""lint"": ""eslint src"",\n    ""test"": ""vscode-test""\n  },\n  ""devDependencies"": {\n    ""@types/mocha"": ""^10.0.10"",\n    ""@types/node"": ""20.x"",\n    ""@types/vscode"": ""^1.102.0"",\n    ""@typescript-eslint/eslint-plugin"": ""^8.31.1"",\n    ""@typescript-eslint/parser"": ""^8.31.1"",\n    ""@vscode/test-cli"": ""^0.0.11"",\n    ""@vscode/test-electron"": ""^2.5.2"",\n    ""eslint"": ""^9.25.1"",\n    ""ts-loader"": ""^9.5.2"",\n    ""typescript"": ""^5.8.3"",\n    ""webpack"": ""^5.99.7"",\n    ""webpack-cli"": ""^6.0.1""\n  },\n  ""dependencies"": {\n    ""vscode-languageclient"": ""^9.0.1""\n  }\n}\n",json,tab
+2,325447,"package.json",0,1,"{",json,content
+3,325476,"package.json",2,24,"  ""name"": ""AkandeChips"",",json,content
+4,325506,"package.json",27,26,"  ""displayName"": ""Akande"",",json,content
+5,325526,"package.json",54,46,"  ""description"": ""Chips Programmimg Language"",",json,content
+6,325542,"package.json",101,21,"  ""version"": ""0.0.1"",",json,content
+7,325560,"package.json",123,14,"  ""engines"": {",json,content
+8,325576,"package.json",138,24,"    ""vscode"": ""^1.102.0""",json,content
+9,325593,"package.json",163,4,"  },",json,content
+10,325612,"package.json",168,17,"  ""categories"": [",json,content
+11,325635,"package.json",186,11,"    ""Other""",json,content
+12,325729,"package.json",198,4,"  ],",json,content
+13,325760,"package.json",203,25,"  ""activationEvents"": [],",json,content
+14,325776,"package.json",229,32,"  ""main"": ""./dist/extension.js"",",json,content
+15,325792,"package.json",262,18,"  ""contributes"": {",json,content
+16,325810,"package.json",281,17,"    ""commands"": [",json,content
+17,325827,"package.json",299,7,"      {",json,content
+18,325843,"package.json",307,44,"        ""command"": ""AkandeChips.helloWorld"",",json,content
+19,325860,"package.json",352,30,"        ""title"": ""Hello World""",json,content
+20,325877,"package.json",383,7,"      }",json,content
+21,325893,"package.json",391,6,"    ],",json,content
+22,325913,"package.json",398,18,"    ""languages"": [",json,content
+23,325933,"package.json",417,7,"      {",json,content
+24,325955,"package.json",425,28,"        ""id"": ""akandechips"",",json,content
+25,325979,"package.json",454,50,"        ""aliases"": [""AkandeChips"", ""akandechips""],",json,content
+26,325997,"package.json",505,44,"        ""extensions"": ["".akande"", "".chips""],",json,content
+27,326018,"package.json",550,56,"        ""configuration"": ""./language-configuration.json""",json,content
+28,326033,"package.json",607,7,"      }",json,content
+29,326049,"package.json",615,6,"    ],",json,content
+30,326067,"package.json",622,17,"    ""grammars"": [",json,content
+31,326082,"package.json",640,7,"      {",json,content
+32,326098,"package.json",648,34,"        ""language"": ""akandechips"",",json,content
+33,326115,"package.json",683,42,"        ""scopeName"": ""source.akandechips"",",json,content
+34,326136,"package.json",726,56,"        ""path"": ""./syntaxes/akandechips.tmLanguage.json""",json,content
+35,326151,"package.json",783,7,"      }",json,content
+36,326165,"package.json",791,6,"    ],",json,content
+37,326182,"package.json",798,17,"    ""snippets"": [",json,content
+38,326198,"package.json",816,7,"      {",json,content
+39,326214,"package.json",824,34,"        ""language"": ""akandechips"",",json,content
+40,326231,"package.json",859,54,"        ""path"": ""./snippets/akandechips.code-snippets""",json,content
+41,326251,"package.json",914,7,"      }",json,content
+42,326265,"package.json",922,5,"    ]",json,content
+43,326281,"package.json",928,4,"  },",json,content
+44,326297,"package.json",933,14,"  ""scripts"": {",json,content
+45,326315,"package.json",948,43,"    ""vscode:prepublish"": ""npm run package"",",json,content
+46,326331,"package.json",992,25,"    ""compile"": ""webpack"",",json,content
+47,326348,"package.json",1018,31,"    ""watch"": ""webpack --watch"",",json,content
+48,326364,"package.json",1050,71,"    ""package"": ""webpack --mode production --devtool hidden-source-map"",",json,content
+49,326380,"package.json",1122,45,"    ""compile-tests"": ""tsc -p . --outDir out"",",json,content
+50,326396,"package.json",1168,46,"    ""watch-tests"": ""tsc -p . -w --outDir out"",",json,content
+51,326412,"package.json",1215,74,"    ""pretest"": ""npm run compile-tests && npm run compile && npm run lint"",",json,content
+52,326427,"package.json",1290,25,"    ""lint"": ""eslint src"",",json,content
+53,326443,"package.json",1316,25,"    ""test"": ""vscode-test""",json,content
+54,326460,"package.json",1342,4,"  },",json,content
+55,326477,"package.json",1347,22,"  ""devDependencies"": {",json,content
+56,326494,"package.json",1370,31,"    ""@types/mocha"": ""^10.0.10"",",json,content
+57,326520,"package.json",1402,26,"    ""@types/node"": ""20.x"",",json,content
+58,326537,"package.json",1429,32,"    ""@types/vscode"": ""^1.102.0"",",json,content
+59,326565,"package.json",1462,50,"    ""@typescript-eslint/eslint-plugin"": ""^8.31.1"",",json,content
+60,326580,"package.json",1513,43,"    ""@typescript-eslint/parser"": ""^8.31.1"",",json,content
+61,326596,"package.json",1557,34,"    ""@vscode/test-cli"": ""^0.0.11"",",json,content
+62,326611,"package.json",1592,38,"    ""@vscode/test-electron"": ""^2.5.2"",",json,content
+63,326627,"package.json",1631,24,"    ""eslint"": ""^9.25.1"",",json,content
+64,326642,"package.json",1656,26,"    ""ts-loader"": ""^9.5.2"",",json,content
+65,326658,"package.json",1683,27,"    ""typescript"": ""^5.8.3"",",json,content
+66,326675,"package.json",1711,25,"    ""webpack"": ""^5.99.7"",",json,content
+67,326691,"package.json",1737,27,"    ""webpack-cli"": ""^6.0.1""",json,content
+68,326709,"package.json",1765,4,"  },",json,content
+69,326728,"package.json",1770,19,"  ""dependencies"": {",json,content
+70,326744,"package.json",1790,37,"    ""pygls"": ""^1.0.0"",",json,content
+71,326759,"package.json",1813,3,"    ""vscode-languageclient"": ""^9.0.1""",json,content
+72,326777,"package.json",1851,1,"  }",json,content
+73,326796,"package.json",1855,0,"}",json,content
+74,326813,"package.json",1856,0,"\n",json,content
+75,335801,"package.json",0,1,"{",json,content
+76,335829,"package.json",2,24,"  ""name"": ""AkandeChips"",",json,content
+77,335845,"package.json",27,26,"  ""displayName"": ""Akande"",",json,content
+78,335861,"package.json",54,46,"  ""description"": ""Chips Programmimg Language"",",json,content
+79,335878,"package.json",101,21,"  ""version"": ""0.0.1"",",json,content
+80,335893,"package.json",123,14,"  ""engines"": {",json,content
+81,335908,"package.json",138,24,"    ""vscode"": ""^1.102.0""",json,content
+82,335931,"package.json",163,4,"  },",json,content
+83,335945,"package.json",168,17,"  ""categories"": [",json,content
+84,335964,"package.json",186,11,"    ""Other""",json,content
+85,335980,"package.json",198,4,"  ],",json,content
+86,335995,"package.json",203,25,"  ""activationEvents"": [],",json,content
+87,336011,"package.json",229,32,"  ""main"": ""./dist/extension.js"",",json,content
+88,336027,"package.json",262,18,"  ""contributes"": {",json,content
+89,336042,"package.json",281,17,"    ""commands"": [",json,content
+90,336057,"package.json",299,7,"      {",json,content
+91,336074,"package.json",307,44,"        ""command"": ""AkandeChips.helloWorld"",",json,content
+92,336090,"package.json",352,30,"        ""title"": ""Hello World""",json,content
+93,336106,"package.json",383,7,"      }",json,content
+94,336122,"package.json",391,6,"    ],",json,content
+95,336141,"package.json",398,18,"    ""languages"": [",json,content
+96,336158,"package.json",417,7,"      {",json,content
+97,336174,"package.json",425,28,"        ""id"": ""akandechips"",",json,content
+98,336197,"package.json",454,50,"        ""aliases"": [""AkandeChips"", ""akandechips""],",json,content
+99,336207,"package.json",505,44,"        ""extensions"": ["".akande"", "".chips""],",json,content
+100,336223,"package.json",550,56,"        ""configuration"": ""./language-configuration.json""",json,content
+101,336241,"package.json",607,7,"      }",json,content
+102,336258,"package.json",615,6,"    ],",json,content
+103,336275,"package.json",622,17,"    ""grammars"": [",json,content
+104,336292,"package.json",640,7,"      {",json,content
+105,336308,"package.json",648,34,"        ""language"": ""akandechips"",",json,content
+106,336324,"package.json",683,42,"        ""scopeName"": ""source.akandechips"",",json,content
+107,336342,"package.json",726,56,"        ""path"": ""./syntaxes/akandechips.tmLanguage.json""",json,content
+108,336358,"package.json",783,7,"      }",json,content
+109,336374,"package.json",791,6,"    ],",json,content
+110,336393,"package.json",798,17,"    ""snippets"": [",json,content
+111,336408,"package.json",816,7,"      {",json,content
+112,336425,"package.json",824,34,"        ""language"": ""akandechips"",",json,content
+113,336443,"package.json",859,54,"        ""path"": ""./snippets/akandechips.code-snippets""",json,content
+114,336460,"package.json",914,7,"      }",json,content
+115,336474,"package.json",922,5,"    ]",json,content
+116,336493,"package.json",928,4,"  },",json,content
+117,336509,"package.json",933,14,"  ""scripts"": {",json,content
+118,336524,"package.json",948,43,"    ""vscode:prepublish"": ""npm run package"",",json,content
+119,336541,"package.json",992,25,"    ""compile"": ""webpack"",",json,content
+120,336556,"package.json",1018,31,"    ""watch"": ""webpack --watch"",",json,content
+121,336575,"package.json",1050,71,"    ""package"": ""webpack --mode production --devtool hidden-source-map"",",json,content
+122,336591,"package.json",1122,45,"    ""compile-tests"": ""tsc -p . --outDir out"",",json,content
+123,336607,"package.json",1168,46,"    ""watch-tests"": ""tsc -p . -w --outDir out"",",json,content
+124,336624,"package.json",1215,74,"    ""pretest"": ""npm run compile-tests && npm run compile && npm run lint"",",json,content
+125,336643,"package.json",1290,25,"    ""lint"": ""eslint src"",",json,content
+126,336661,"package.json",1316,25,"    ""test"": ""vscode-test""",json,content
+127,336677,"package.json",1342,4,"  },",json,content
+128,336692,"package.json",1347,22,"  ""devDependencies"": {",json,content
+129,336710,"package.json",1370,31,"    ""@types/mocha"": ""^10.0.10"",",json,content
+130,336727,"package.json",1402,26,"    ""@types/node"": ""20.x"",",json,content
+131,336743,"package.json",1429,32,"    ""@types/vscode"": ""^1.102.0"",",json,content
+132,336760,"package.json",1462,50,"    ""@typescript-eslint/eslint-plugin"": ""^8.31.1"",",json,content
+133,336776,"package.json",1513,43,"    ""@typescript-eslint/parser"": ""^8.31.1"",",json,content
+134,336793,"package.json",1557,34,"    ""@vscode/test-cli"": ""^0.0.11"",",json,content
+135,336811,"package.json",1592,38,"    ""@vscode/test-electron"": ""^2.5.2"",",json,content
+136,336827,"package.json",1631,24,"    ""eslint"": ""^9.25.1"",",json,content
+137,336842,"package.json",1656,26,"    ""ts-loader"": ""^9.5.2"",",json,content
+138,336860,"package.json",1683,27,"    ""typescript"": ""^5.8.3"",",json,content
+139,336877,"package.json",1711,25,"    ""webpack"": ""^5.99.7"",",json,content
+140,336892,"package.json",1737,27,"    ""webpack-cli"": ""^6.0.1""",json,content
+141,336909,"package.json",1765,4,"  },",json,content
+142,336926,"package.json",1770,19,"  ""dependencies"": {",json,content
+143,336942,"package.json",1790,22,"    ""pygls"": ""^1.0.0"",",json,content
+144,336959,"package.json",1813,37,"    ""vscode-languageclient"": ""^9.0.1""",json,content
+145,336983,"package.json",1851,3,"  }",json,content
+146,336995,"package.json",1855,1,"}",json,content
+147,695019,".chips",0,0,"",plaintext,tab
+148,695161,".gitignore",0,0,"out\ndist\nnode_modules\n.vscode-test/\n*.vsix\n",ignore,tab
+149,696763,".chips",0,0,"",plaintext,tab
+150,716914,".chips",0,0,"print('Hello World!')",plaintext,content
+151,737249,".chips",21,0,"\r\n",plaintext,content
+152,752560,".chips",21,0,"\r\n",plaintext,content
+153,777516,".chips",0,21,"def greet():",plaintext,content
+154,777531,".chips",14,0,"    print('Hello World!')",plaintext,content
+155,777563,".chips",41,0,"\r\n",plaintext,content
+156,808335,".chips",39,0,"\r\n    ",python,content
+157,962149,"akandes_python_backend/chips_interpreter.py",0,0,"",python,tab
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+158,962199,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+159,962200,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n    run_chips_file(sys.argv[1])",python,content
+160,962201,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n        sys.exit(1)",python,content
+161,962201,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n        print('Usage: python chips_interpreter.py <file.chips>')",python,content
+162,962202,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n    if len(sys.argv) != 2:",python,content
+163,962202,"akandes_python_backend/chips_interpreter.py",0,0,"\r\nif __name__ == '__main__':",python,content
+164,962203,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+165,962203,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n    exec(code, {})",python,content
+167,962204,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n        code = f.read()",python,content
+166,962203,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n    # For now, just execute as Python (for demo purposes)",python,content
+168,962204,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n    with open(filename, 'r') as f:",python,content
+169,962205,"akandes_python_backend/chips_interpreter.py",0,0,"\r\ndef run_chips_file(filename):",python,content
+170,962205,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n# Simple interpreter for .chips files (Python-like subset)",python,content
+171,962205,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,content
+172,962206,"akandes_python_backend/chips_interpreter.py",0,0,"import sys",python,content
+173,1019371,"akandes_python_backend/chips_interpreter.py",0,10,"import sys",python,content
+174,1019428,"akandes_python_backend/chips_interpreter.py",14,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+175,1019476,"akandes_python_backend/chips_interpreter.py",74,29,"def run_chips_file(filename):",python,content
+176,1019511,"akandes_python_backend/chips_interpreter.py",105,34,"    with open(filename, 'r') as f:",python,content
+177,1019536,"akandes_python_backend/chips_interpreter.py",141,23,"        code = f.read()",python,content
+178,1019588,"akandes_python_backend/chips_interpreter.py",166,57,"    # For now, just execute as Python (for demo purposes)",python,content
+179,1019607,"akandes_python_backend/chips_interpreter.py",225,18,"    exec(code, {})",python,content
+180,1019637,"akandes_python_backend/chips_interpreter.py",247,26,"def greet():",python,content
+181,1019667,"akandes_python_backend/chips_interpreter.py",261,26,"    print('Hello World!')",python,content
+182,1019683,"akandes_python_backend/chips_interpreter.py",288,64,"",python,content
+183,1019701,"akandes_python_backend/chips_interpreter.py",290,19,"if __name__ == '__main__':",python,content
+184,1019716,"akandes_python_backend/chips_interpreter.py",318,31,"    if len(sys.argv) != 2:",python,content
+185,1019734,"akandes_python_backend/chips_interpreter.py",346,0,"        print('Usage: python chips_interpreter.py <file.chips>')",python,content
+186,1019753,"akandes_python_backend/chips_interpreter.py",410,0,"\r\n        sys.exit(1)",python,content
+187,1019771,"akandes_python_backend/chips_interpreter.py",431,0,"\r\n    run_chips_file(sys.argv[1])",python,content
+188,1019789,"akandes_python_backend/chips_interpreter.py",464,0,"\r\n    greet()",python,content
+189,1019819,"akandes_python_backend/chips_interpreter.py",477,0,"\r\n",python,content
+190,1058292,"akandes_python_backend/chips_interpreter.py",0,10,"import sys",python,content
+191,1058349,"akandes_python_backend/chips_interpreter.py",14,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+192,1058366,"akandes_python_backend/chips_interpreter.py",74,29,"def run_chips_file(filename):",python,content
+193,1058381,"akandes_python_backend/chips_interpreter.py",105,34,"    with open(filename, 'r') as f:",python,content
+194,1058400,"akandes_python_backend/chips_interpreter.py",141,23,"        code = f.read()",python,content
+195,1058418,"akandes_python_backend/chips_interpreter.py",166,57,"    # For now, just execute as Python (for demo purposes)",python,content
+196,1058435,"akandes_python_backend/chips_interpreter.py",225,18,"    exec(code, {})",python,content
+197,1058467,"akandes_python_backend/chips_interpreter.py",247,12,"def greet():",python,content
+198,1058482,"akandes_python_backend/chips_interpreter.py",261,25,"    print('Hello World!')",python,content
+199,1058514,"akandes_python_backend/chips_interpreter.py",290,26,"greet()",python,content
+200,1058531,"akandes_python_backend/chips_interpreter.py",299,26,"",python,content
+201,1058549,"akandes_python_backend/chips_interpreter.py",299,135,"",python,content
+202,1087202,"akandes_python_backend/chips_interpreter.py",297,0,"\r\n",python,content
+203,1090054,"akandes_python_backend/chips_interpreter.py",299,0,"\r\n",python,content
+204,1090796,"akandes_python_backend/chips_interpreter.py",301,0,"ef greet():\r\n    print('Hello World!')\r\n\r\ngreet()",python,content
+205,1100023,"akandes_python_backend/chips_interpreter.py",350,0,"\r\n",python,content
+206,1106694,"akandes_python_backend/chips_interpreter.py",290,62,"",python,content
+207,1107592,"akandes_python_backend/chips_interpreter.py",288,2,"",python,content
+208,1123409,"akandes_python_backend/chips_interpreter.py",74,171,"def",python,content
+209,1123443,"akandes_python_backend/chips_interpreter.py",77,0," run_chips_file(filename:",python,content
+210,1123484,"akandes_python_backend/chips_interpreter.py",102,0," str):",python,content
+211,1123511,"akandes_python_backend/chips_interpreter.py",108,0,"\r\n    with",python,content
+212,1123544,"akandes_python_backend/chips_interpreter.py",118,0," open(filename,",python,content
+213,1123578,"akandes_python_backend/chips_interpreter.py",133,0," 'r')",python,content
+214,1123612,"akandes_python_backend/chips_interpreter.py",138,0," as",python,content
+215,1123643,"akandes_python_backend/chips_interpreter.py",141,0," f:",python,content
+216,1123677,"akandes_python_backend/chips_interpreter.py",144,0,"\r\n        code",python,content
+217,1123709,"akandes_python_backend/chips_interpreter.py",158,0," =",python,content
+218,1123737,"akandes_python_backend/chips_interpreter.py",160,0," f.read()",python,content
+219,1123772,"akandes_python_backend/chips_interpreter.py",169,0,"\r\n    #",python,content
+220,1123802,"akandes_python_backend/chips_interpreter.py",176,0," For",python,content
+221,1123830,"akandes_python_backend/chips_interpreter.py",180,0," now,",python,content
+222,1123876,"akandes_python_backend/chips_interpreter.py",185,0," just",python,content
+223,1123909,"akandes_python_backend/chips_interpreter.py",190,0," execute",python,content
+224,1123936,"akandes_python_backend/chips_interpreter.py",198,0," as",python,content
+225,1123972,"akandes_python_backend/chips_interpreter.py",201,0," Python",python,content
+226,1124001,"akandes_python_backend/chips_interpreter.py",208,0," (for",python,content
+227,1124030,"akandes_python_backend/chips_interpreter.py",213,0," demo",python,content
+228,1124060,"akandes_python_backend/chips_interpreter.py",218,0," purposes)",python,content
+229,1124094,"akandes_python_backend/chips_interpreter.py",228,0,"\r\n    exec(code,",python,content
+230,1124144,"akandes_python_backend/chips_interpreter.py",244,0," {})\r\n",python,content
+231,1139123,"akandes_python_backend/chips_interpreter.py",0,293,"#",python,content
+232,1139156,"akandes_python_backend/chips_interpreter.py",1,0," Simple",python,content
+233,1139190,"akandes_python_backend/chips_interpreter.py",8,0," interpreter",python,content
+234,1139220,"akandes_python_backend/chips_interpreter.py",20,0," for",python,content
+235,1139264,"akandes_python_backend/chips_interpreter.py",24,0," .chips",python,content
+236,1139308,"akandes_python_backend/chips_interpreter.py",31,0," files",python,content
+237,1139331,"akandes_python_backend/chips_interpreter.py",37,0," (Python",python,content
+238,1139357,"akandes_python_backend/chips_interpreter.py",45,0,"-",python,content
+239,1139386,"akandes_python_backend/chips_interpreter.py",46,0,"like",python,content
+240,1139424,"akandes_python_backend/chips_interpreter.py",50,0," subset)",python,content
+241,1139455,"akandes_python_backend/chips_interpreter.py",58,0,"\r\ndef",python,content
+242,1139488,"akandes_python_backend/chips_interpreter.py",63,0," run_chips_file(filename:",python,content
+243,1139522,"akandes_python_backend/chips_interpreter.py",88,0," str):",python,content
+244,1139550,"akandes_python_backend/chips_interpreter.py",94,0,"\r\n    with",python,content
+245,1139592,"akandes_python_backend/chips_interpreter.py",104,0," open(filename,",python,content
+246,1139629,"akandes_python_backend/chips_interpreter.py",119,0," 'r')",python,content
+247,1139658,"akandes_python_backend/chips_interpreter.py",124,0," as",python,content
+248,1139691,"akandes_python_backend/chips_interpreter.py",127,0," f:",python,content
+249,1139718,"akandes_python_backend/chips_interpreter.py",130,0,"\r\n        code",python,content
+250,1139754,"akandes_python_backend/chips_interpreter.py",144,0," =",python,content
+251,1139784,"akandes_python_backend/chips_interpreter.py",146,0," f.read()",python,content
+252,1139818,"akandes_python_backend/chips_interpreter.py",155,0,"\r\n    #",python,content
+253,1139851,"akandes_python_backend/chips_interpreter.py",162,0," For",python,content
+254,1139885,"akandes_python_backend/chips_interpreter.py",166,0," now,",python,content
+255,1139914,"akandes_python_backend/chips_interpreter.py",171,0," just",python,content
+256,1139952,"akandes_python_backend/chips_interpreter.py",176,0," execute",python,content
+257,1139986,"akandes_python_backend/chips_interpreter.py",184,0," as",python,content
+258,1140017,"akandes_python_backend/chips_interpreter.py",187,0," Python",python,content
+259,1140060,"akandes_python_backend/chips_interpreter.py",194,0," (for",python,content
+260,1140089,"akandes_python_backend/chips_interpreter.py",199,0," demo",python,content
+261,1140118,"akandes_python_backend/chips_interpreter.py",204,0," purposes)",python,content
+262,1140144,"akandes_python_backend/chips_interpreter.py",214,0,"\r\n    exec(code,",python,content
+263,1140185,"akandes_python_backend/chips_interpreter.py",230,0," {})",python,content
+264,1140218,"akandes_python_backend/chips_interpreter.py",234,0,"\r\n\r\ndef",python,content
+265,1140245,"akandes_python_backend/chips_interpreter.py",241,0," greet():",python,content
+266,1140280,"akandes_python_backend/chips_interpreter.py",250,0,"\r\n    print('Hello",python,content
+267,1140320,"akandes_python_backend/chips_interpreter.py",268,0," World!')\r\n",python,content
+268,1169373,"akandes_python_backend/chips_interpreter.py",281,0,"\r\n",python,content
+269,1299304,"akandes_python_backend/chips_interpreter.py",281,0,"\r\n",python,content
+270,1302500,"akandes_python_backend/chips_interpreter.py",281,2,"",python,content
+271,1302943,"akandes_python_backend/chips_interpreter.py",279,2,"",python,content
+272,1342525,"\response_32c1e8b4-3ce1-4fc7-af58-b427cf868d24\0",0,0,"def greet():\r\n    print('Hello World!')\r\n\r\ngreet()",python,tab
+273,1371140,"akandes_python_backend/chips_interpreter.py",0,0,"# Simple interpreter for .chips files (Python-like subset)\r\ndef run_chips_file(filename: str):\r\n    with open(filename, 'r') as f:\r\n        code = f.read()\r\n    # For now, just execute as Python (for demo purposes)\r\n    exec(code, {})\r\n\r\ndef greet():\r\n    print('Hello World!')\r\n\r\ngreet()\r\n\r\n",python,tab
+274,1401520,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+275,1401556,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+276,1401591,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+277,1401614,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+278,1401630,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+279,1401646,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+280,1401679,"akandes_python_backend/chips_interpreter.py",238,12,"def greet():",python,content
+281,1401701,"akandes_python_backend/chips_interpreter.py",252,25,"    print('Hello World!')",python,content
+282,1401742,"akandes_python_backend/chips_interpreter.py",281,7,"greet()",python,content
+283,1401778,"akandes_python_backend/chips_interpreter.py",292,0,"# C:/Python313/python.exe akandes_python_backend/chips_interpreter.py .chips",python,content
+284,1401799,"akandes_python_backend/chips_interpreter.py",368,0,"\r\n",python,content
+285,1401814,"akandes_python_backend/chips_interpreter.py",370,0,"\r\n",python,content
+286,1418186,"akandes_python_backend/chips_interpreter.py",0,372,"\r\n",python,content
+287,1424688,".chips",0,0,"def greet():\r\n    print('Hello World!')\r\n    \r\n\r\n",python,tab
+288,1426488,".chips",41,6,"",python,content
+289,1426522,"akandes_python_backend/chips_interpreter.py",0,0,"\r\n",python,tab
+290,1447990,"akandes_python_backend/chips_interpreter.py",0,0,"# Simple interpreter for .chips files (Python-like subset)\r\ndef run_chips_file(filename: str):\r\n    with open(filename, 'r') as f:\r\n        code = f.read()\r\n    # For now, just execute as Python (for demo purposes)\r\n    exec(code, {})\r\n\r\ndef greet():\r\n    print('Hello World!')\r\n\r\ngreet()\r\n\r\n# C:/Python313/python.exe akandes_python_backend/chips_interpreter.py .chips\r\n",python,content
+291,1448027,".gitignore",0,0,"out\ndist\nnode_modules\n.vscode-test/\n*.vsix\n",ignore,tab
+292,1450121,"akandes_python_backend/chips_interpreter.py",0,0,"# Simple interpreter for .chips files (Python-like subset)\r\ndef run_chips_file(filename: str):\r\n    with open(filename, 'r') as f:\r\n        code = f.read()\r\n    # For now, just execute as Python (for demo purposes)\r\n    exec(code, {})\r\n\r\ndef greet():\r\n    print('Hello World!')\r\n\r\ngreet()\r\n\r\n# C:/Python313/python.exe akandes_python_backend/chips_interpreter.py .chips\r\n\r\n",python,tab
+293,1548098,"akandes_python_backend/chips_interpreter.py",292,76,"",python,content
+294,1549022,"akandes_python_backend/chips_interpreter.py",290,2,"",python,content
+295,1803760,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+296,1803786,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+297,1803818,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+298,1803845,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+299,1803869,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+300,1803885,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+301,1803920,"akandes_python_backend/chips_interpreter.py",238,12,"def greet():",python,content
+302,1803939,"akandes_python_backend/chips_interpreter.py",252,25,"    print('Hello World!')",python,content
+303,1803956,"akandes_python_backend/chips_interpreter.py",279,0,"    print('This is AkandeChips!')",python,content
+304,1803973,"akandes_python_backend/chips_interpreter.py",314,7,"",python,content
+305,1803993,"akandes_python_backend/chips_interpreter.py",316,0,"greet()",python,content
+306,1804038,"akandes_python_backend/chips_interpreter.py",327,0,"\r\n",python,content
+307,1836428,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+308,1836457,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+309,1836485,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+310,1836515,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+311,1836534,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+312,1836550,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+313,1836581,"akandes_python_backend/chips_interpreter.py",238,12,"def greet():",python,content
+314,1836599,"akandes_python_backend/chips_interpreter.py",252,25,"    print('Hello World!')",python,content
+315,1836616,"akandes_python_backend/chips_interpreter.py",279,33,"    print('This is AkandeChips!')",python,content
+316,1836649,"akandes_python_backend/chips_interpreter.py",316,7,"greet()",python,content
+317,1858302,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+318,1858355,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+319,1858376,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+320,1858401,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+321,1858417,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+322,1858435,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+323,1858602,"akandes_python_backend/chips_interpreter.py",238,12,"def greet(name):",python,content
+324,1858621,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+325,1858681,"akandes_python_backend/chips_interpreter.py",283,33,"",python,content
+326,1858707,"akandes_python_backend/chips_interpreter.py",285,0,"greet('Akande')",python,content
+327,1858734,"akandes_python_backend/chips_interpreter.py",302,7,"",python,content
+328,1858800,"akandes_python_backend/chips_interpreter.py",306,2,"",python,content
+329,1885581,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+330,1885612,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+331,1885642,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+332,1885675,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+333,1885693,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+334,1885716,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+335,1885747,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+336,1885767,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+337,1885799,"akandes_python_backend/chips_interpreter.py",285,15,"greet('Akande')",python,content
+338,1891399,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+339,1891429,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+340,1891460,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+341,1891488,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+342,1891513,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+343,1891531,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+344,1891563,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+345,1891581,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+346,1891613,"akandes_python_backend/chips_interpreter.py",285,15,"greet('Akande')",python,content
+347,1901516,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+348,1901548,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+349,1901588,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+350,1901623,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+351,1901653,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+352,1901673,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+353,1901720,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+354,1901754,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+355,1901811,"akandes_python_backend/chips_interpreter.py",285,15,"greet('Akande')",python,content
+356,1901846,"akandes_python_backend/chips_interpreter.py",304,0,"for i in range(5):",python,content
+357,1901865,"akandes_python_backend/chips_interpreter.py",324,0,"    print('Number:', i)",python,content
+358,1901884,"akandes_python_backend/chips_interpreter.py",347,0,"\r\n",python,content
+359,1901907,"akandes_python_backend/chips_interpreter.py",349,0,"\r\n",python,content
+360,1901939,"akandes_python_backend/chips_interpreter.py",351,0,"\r\n",python,content
+361,1922860,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+362,1922897,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+363,1922938,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+364,1922962,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+365,1922980,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+366,1922996,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+367,1923034,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+368,1923047,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+369,1923079,"akandes_python_backend/chips_interpreter.py",285,15,"greet('Akande')",python,content
+370,1923112,"akandes_python_backend/chips_interpreter.py",304,18,"",python,content
+371,1923134,"akandes_python_backend/chips_interpreter.py",306,23,"",python,content
+372,1923152,"akandes_python_backend/chips_interpreter.py",306,6,"",python,content
+373,1935409,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+374,1935443,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+375,1935477,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+376,1935521,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+377,1935559,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+378,1935595,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+379,1935640,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+380,1935658,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+381,1935692,"akandes_python_backend/chips_interpreter.py",285,15,"greet('Akande')",python,content
+382,1935741,"akandes_python_backend/chips_interpreter.py",304,0,"for i in range(5):",python,content
+383,1935760,"akandes_python_backend/chips_interpreter.py",324,0,"    print('Number:', i)",python,content
+384,1935777,"akandes_python_backend/chips_interpreter.py",347,0,"\r\n",python,content
+385,1935796,"akandes_python_backend/chips_interpreter.py",349,0,"\r\n",python,content
+386,1935815,"akandes_python_backend/chips_interpreter.py",351,0,"\r\n",python,content
+387,1950019,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+388,1950059,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+389,1950093,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+390,1950116,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+391,1950142,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+392,1950162,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+393,1950201,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+394,1950225,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+395,1950265,"akandes_python_backend/chips_interpreter.py",285,15,"greet('Akande')",python,content
+396,1950295,"akandes_python_backend/chips_interpreter.py",304,18,"",python,content
+397,1950311,"akandes_python_backend/chips_interpreter.py",306,23,"",python,content
+398,1950333,"akandes_python_backend/chips_interpreter.py",306,6,"",python,content
+399,1953930,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+400,1953966,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+401,1953992,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+402,1954024,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+403,1954042,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+404,1954060,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+405,1954094,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+406,1954114,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+407,1954152,"akandes_python_backend/chips_interpreter.py",285,15,"greet('Akande')",python,content
+408,1954189,"akandes_python_backend/chips_interpreter.py",304,0,"for i in range(5):",python,content
+409,1954208,"akandes_python_backend/chips_interpreter.py",324,0,"    print('Number:', i)",python,content
+410,1954227,"akandes_python_backend/chips_interpreter.py",347,0,"\r\n",python,content
+411,1954246,"akandes_python_backend/chips_interpreter.py",349,0,"\r\n",python,content
+412,1954264,"akandes_python_backend/chips_interpreter.py",351,0,"\r\n",python,content
+413,1960180,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+414,1960206,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+415,1960236,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+416,1960266,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+417,1960293,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+418,1960327,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+419,1960361,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+420,1960377,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+421,1960408,"akandes_python_backend/chips_interpreter.py",285,15,"greet('Akande')",python,content
+422,1960441,"akandes_python_backend/chips_interpreter.py",304,18,"for i in range(5):",python,content
+423,1960457,"akandes_python_backend/chips_interpreter.py",324,23,"    print('Number:', i)",python,content
+424,1960490,"akandes_python_backend/chips_interpreter.py",351,0,"x = 10",python,content
+425,1960507,"akandes_python_backend/chips_interpreter.py",359,0,"if x > 5:",python,content
+426,1960526,"akandes_python_backend/chips_interpreter.py",368,0,"\r\n    print('x is greater than 5')",python,content
+427,1960545,"akandes_python_backend/chips_interpreter.py",402,0,"\r\nelse:",python,content
+428,1960560,"akandes_python_backend/chips_interpreter.py",409,0,"\r\n    print('x is 5 or less')",python,content
+429,1960576,"akandes_python_backend/chips_interpreter.py",438,0,"\r\n",python,content
+430,1960593,"akandes_python_backend/chips_interpreter.py",440,0,"\r\n",python,content
+431,1960610,"akandes_python_backend/chips_interpreter.py",442,0,"\r\n",python,content
+432,1978599,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+433,1978632,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+434,1978658,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+435,1978690,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+436,1978707,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+437,1978724,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+438,1978757,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+439,1978774,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+440,1978809,"akandes_python_backend/chips_interpreter.py",285,15,"greet('Akande')",python,content
+441,1978840,"akandes_python_backend/chips_interpreter.py",304,18,"for i in range(5):",python,content
+442,1978859,"akandes_python_backend/chips_interpreter.py",324,23,"    print('Number:', i)",python,content
+443,1978891,"akandes_python_backend/chips_interpreter.py",351,6,"x = 10",python,content
+444,1978913,"akandes_python_backend/chips_interpreter.py",359,9,"if x > 5:",python,content
+445,1978931,"akandes_python_backend/chips_interpreter.py",370,32,"    print('x is greater than 5')",python,content
+446,1978947,"akandes_python_backend/chips_interpreter.py",404,5,"else:",python,content
+447,1978965,"akandes_python_backend/chips_interpreter.py",411,27,"    print('x is 5 or less')",python,content
+448,1979009,"akandes_python_backend/chips_interpreter.py",442,0,"class Person:",python,content
+449,1979031,"akandes_python_backend/chips_interpreter.py",457,0,"    def __init__(self, name):",python,content
+450,1979058,"akandes_python_backend/chips_interpreter.py",486,0,"\r\n        self.name = name",python,content
+451,1979074,"akandes_python_backend/chips_interpreter.py",512,0,"\r\n",python,content
+452,1979092,"akandes_python_backend/chips_interpreter.py",514,0,"\r\n    def say_hello(self):",python,content
+453,1979110,"akandes_python_backend/chips_interpreter.py",540,0,"\r\n        print('Hello, my name is', self.name)",python,content
+454,1979127,"akandes_python_backend/chips_interpreter.py",587,0,"\r\n",python,content
+455,1979143,"akandes_python_backend/chips_interpreter.py",589,0,"\r\np = Person('Akande')",python,content
+456,1979178,"akandes_python_backend/chips_interpreter.py",611,0,"\r\np.say_hello()",python,content
+457,1979218,"akandes_python_backend/chips_interpreter.py",626,0,"\r\n",python,content
+458,1979270,"akandes_python_backend/chips_interpreter.py",628,0,"\r\n",python,content
+459,1979293,"akandes_python_backend/chips_interpreter.py",630,0,"\r\n",python,content
+460,2015860,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+461,2015890,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+462,2015922,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+463,2015955,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+464,2015984,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+465,2016016,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+466,2016056,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+467,2016073,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+468,2016112,"akandes_python_backend/chips_interpreter.py",285,15,"greet('Akande')",python,content
+469,2016142,"akandes_python_backend/chips_interpreter.py",304,18,"for i in range(5):",python,content
+470,2016159,"akandes_python_backend/chips_interpreter.py",324,23,"    print('Number:', i)",python,content
+471,2016191,"akandes_python_backend/chips_interpreter.py",351,6,"x = 10",python,content
+472,2016213,"akandes_python_backend/chips_interpreter.py",359,9,"if x > 5:",python,content
+473,2016240,"akandes_python_backend/chips_interpreter.py",370,32,"    print('x is greater than 5')",python,content
+474,2016261,"akandes_python_backend/chips_interpreter.py",404,5,"else:",python,content
+475,2016276,"akandes_python_backend/chips_interpreter.py",411,27,"    print('x is 5 or less')",python,content
+476,2016308,"akandes_python_backend/chips_interpreter.py",442,13,"class Person:",python,content
+477,2016324,"akandes_python_backend/chips_interpreter.py",457,29,"    def __init__(self, name):",python,content
+478,2016347,"akandes_python_backend/chips_interpreter.py",488,24,"        self.name = name",python,content
+479,2016406,"akandes_python_backend/chips_interpreter.py",516,24,"    def say_hello(self):",python,content
+480,2016425,"akandes_python_backend/chips_interpreter.py",542,45,"        print('Hello, my name is', self.name)",python,content
+481,2016455,"akandes_python_backend/chips_interpreter.py",591,20,"p = Person('Akande')",python,content
+482,2016471,"akandes_python_backend/chips_interpreter.py",613,13,"p.say_hello()",python,content
+483,2129165,"akandes_python_backend/chips_interpreter.py",628,0,"        \r\n# Arithmetic operations\r\nresult = 2 + 3 * 4\r\nprint('Result of 2 + 3 * 4:', result)\r\n\r\n# String manipulation\r\ns = 'AkandeChips'\r\nprint('Uppercase:', s.upper())\r\n\r\n# List comprehension\r\nsquares = [x * x for x in range(1, 6)]\r\nprint('Squares:', squares)\r\n",python,content
+484,2395577,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+485,2395605,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+486,2395640,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+487,2395661,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+488,2395678,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+489,2395694,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+490,2395729,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+491,2395745,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+492,2395764,"akandes_python_backend/chips_interpreter.py",283,0,"greet('Akande')",python,content
+493,2395780,"akandes_python_backend/chips_interpreter.py",300,15,"",python,content
+494,2395796,"akandes_python_backend/chips_interpreter.py",302,0,"for i in range(5):",python,content
+495,2395812,"akandes_python_backend/chips_interpreter.py",322,18,"    print('Number:', i)",python,content
+496,2395828,"akandes_python_backend/chips_interpreter.py",347,23,"",python,content
+497,2395848,"akandes_python_backend/chips_interpreter.py",349,0,"x = 10",python,content
+498,2395867,"akandes_python_backend/chips_interpreter.py",357,6,"if x > 5:",python,content
+499,2395883,"akandes_python_backend/chips_interpreter.py",368,9,"    print('x is greater than 5')",python,content
+500,2395899,"akandes_python_backend/chips_interpreter.py",402,32,"else:",python,content
+501,2395914,"akandes_python_backend/chips_interpreter.py",409,5,"    print('x is 5 or less')",python,content
+502,2395930,"akandes_python_backend/chips_interpreter.py",438,27,"",python,content
+503,2395946,"akandes_python_backend/chips_interpreter.py",440,0,"class Person:",python,content
+504,2395963,"akandes_python_backend/chips_interpreter.py",455,13,"    def __init__(self, name):",python,content
+505,2395981,"akandes_python_backend/chips_interpreter.py",486,29,"        self.name = name",python,content
+506,2396001,"akandes_python_backend/chips_interpreter.py",512,24,"",python,content
+507,2396015,"akandes_python_backend/chips_interpreter.py",514,0,"    def say_hello(self):",python,content
+508,2396058,"akandes_python_backend/chips_interpreter.py",540,24,"        print('Hello, my name is', self.name)",python,content
+509,2396091,"akandes_python_backend/chips_interpreter.py",587,45,"",python,content
+510,2396109,"akandes_python_backend/chips_interpreter.py",589,0,"p = Person('Akande')",python,content
+511,2396136,"akandes_python_backend/chips_interpreter.py",611,20,"p.say_hello()",python,content
+512,2396165,"akandes_python_backend/chips_interpreter.py",626,13,"        ",python,content
+513,2396184,"akandes_python_backend/chips_interpreter.py",636,8,"# Arithmetic operations",python,content
+514,2396200,"akandes_python_backend/chips_interpreter.py",661,23,"result = 2 + 3 * 4",python,content
+515,2396216,"akandes_python_backend/chips_interpreter.py",681,18,"print('Result of 2 + 3 * 4:', result)",python,content
+516,2396234,"akandes_python_backend/chips_interpreter.py",720,37,"",python,content
+517,2396255,"akandes_python_backend/chips_interpreter.py",722,0,"# String manipulation",python,content
+518,2396283,"akandes_python_backend/chips_interpreter.py",745,21,"s = 'AkandeChips'",python,content
+519,2396299,"akandes_python_backend/chips_interpreter.py",764,17,"print('Uppercase:', s.upper())",python,content
+520,2396316,"akandes_python_backend/chips_interpreter.py",796,30,"",python,content
+521,2396335,"akandes_python_backend/chips_interpreter.py",798,0,"# List comprehension",python,content
+522,2396350,"akandes_python_backend/chips_interpreter.py",820,20,"squares = [x * x for x in range(1, 6)]",python,content
+523,2396367,"akandes_python_backend/chips_interpreter.py",860,38,"print('Squares:', squares)",python,content
+524,2396383,"akandes_python_backend/chips_interpreter.py",888,26,"",python,content
+525,2396430,"akandes_python_backend/chips_interpreter.py",892,2,"",python,content
+526,2430196,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+527,2430226,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+528,2430857,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+529,2430875,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+530,2431554,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+531,2431574,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+532,2431638,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+533,2431659,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+534,2431676,"akandes_python_backend/chips_interpreter.py",283,15,"greet('Akande')",python,content
+535,2431709,"akandes_python_backend/chips_interpreter.py",302,18,"for i in range(5):",python,content
+536,2431745,"akandes_python_backend/chips_interpreter.py",322,23,"    print('Number:', i)",python,content
+537,2431776,"akandes_python_backend/chips_interpreter.py",349,6,"x = 10",python,content
+538,2431791,"akandes_python_backend/chips_interpreter.py",357,9,"if x > 5:",python,content
+539,2431808,"akandes_python_backend/chips_interpreter.py",368,32,"    print('x is greater than 5')",python,content
+540,2431826,"akandes_python_backend/chips_interpreter.py",402,5,"else:",python,content
+541,2431857,"akandes_python_backend/chips_interpreter.py",409,27,"    print('x is 5 or less')",python,content
+542,2431891,"akandes_python_backend/chips_interpreter.py",440,13,"class Person:",python,content
+543,2431909,"akandes_python_backend/chips_interpreter.py",455,29,"    def __init__(self, name):",python,content
+544,2431930,"akandes_python_backend/chips_interpreter.py",486,24,"        self.name = name",python,content
+545,2431961,"akandes_python_backend/chips_interpreter.py",514,24,"    def say_hello(self):",python,content
+546,2431976,"akandes_python_backend/chips_interpreter.py",540,45,"        print('Hello, my name is', self.name)",python,content
+547,2432009,"akandes_python_backend/chips_interpreter.py",589,20,"p = Person('Akande')",python,content
+548,2432026,"akandes_python_backend/chips_interpreter.py",611,13,"p.say_hello()",python,content
+549,2432042,"akandes_python_backend/chips_interpreter.py",626,8,"        ",python,content
+550,2432058,"akandes_python_backend/chips_interpreter.py",636,23,"# Arithmetic operations",python,content
+551,2432074,"akandes_python_backend/chips_interpreter.py",661,18,"result = 2 + 3 * 4",python,content
+552,2432090,"akandes_python_backend/chips_interpreter.py",681,37,"print('Result of 2 + 3 * 4:', result)",python,content
+553,2432123,"akandes_python_backend/chips_interpreter.py",722,21,"# String manipulation",python,content
+554,2432138,"akandes_python_backend/chips_interpreter.py",745,17,"s = 'AkandeChips'",python,content
+555,2432154,"akandes_python_backend/chips_interpreter.py",764,30,"print('Uppercase:', s.upper())",python,content
+556,2432188,"akandes_python_backend/chips_interpreter.py",798,20,"# List comprehension",python,content
+557,2432206,"akandes_python_backend/chips_interpreter.py",820,38,"squares = [x * x for x in range(1, 6)]",python,content
+558,2432222,"akandes_python_backend/chips_interpreter.py",860,26,"print('Squares:', squares)",python,content
+559,2446701,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+560,2446739,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+561,2446782,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+562,2446802,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+563,2446824,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+564,2446848,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+565,2446884,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+566,2446907,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+567,2446924,"akandes_python_backend/chips_interpreter.py",283,15,"greet('Akande')",python,content
+568,2446956,"akandes_python_backend/chips_interpreter.py",302,18,"for i in range(5):",python,content
+569,2446973,"akandes_python_backend/chips_interpreter.py",322,23,"    print('Number:', i)",python,content
+570,2447009,"akandes_python_backend/chips_interpreter.py",349,6,"x = 10",python,content
+571,2447040,"akandes_python_backend/chips_interpreter.py",357,9,"if x > 5:",python,content
+572,2447058,"akandes_python_backend/chips_interpreter.py",368,32,"    print('x is greater than 5')",python,content
+573,2447074,"akandes_python_backend/chips_interpreter.py",402,5,"else:",python,content
+574,2447091,"akandes_python_backend/chips_interpreter.py",409,27,"    print('x is 5 or less')",python,content
+575,2447125,"akandes_python_backend/chips_interpreter.py",440,13,"class Person:",python,content
+576,2447146,"akandes_python_backend/chips_interpreter.py",455,29,"    def __init__(self, name):",python,content
+577,2447163,"akandes_python_backend/chips_interpreter.py",486,24,"        self.name = name",python,content
+578,2447205,"akandes_python_backend/chips_interpreter.py",514,24,"    def say_hello(self):",python,content
+579,2447222,"akandes_python_backend/chips_interpreter.py",540,45,"        print('Hello, my name is', self.name)",python,content
+580,2447257,"akandes_python_backend/chips_interpreter.py",589,20,"p = Person('Akande')",python,content
+581,2447274,"akandes_python_backend/chips_interpreter.py",611,13,"p.say_hello()",python,content
+582,2447290,"akandes_python_backend/chips_interpreter.py",626,8,"        ",python,content
+583,2447311,"akandes_python_backend/chips_interpreter.py",636,23,"# Arithmetic operations",python,content
+584,2447325,"akandes_python_backend/chips_interpreter.py",661,18,"result = 2 + 3 * 4",python,content
+585,2447341,"akandes_python_backend/chips_interpreter.py",681,37,"print('Result of 2 + 3 * 4:', result)",python,content
+586,2447372,"akandes_python_backend/chips_interpreter.py",722,21,"# String manipulation",python,content
+587,2447392,"akandes_python_backend/chips_interpreter.py",745,17,"s = 'AkandeChips'",python,content
+588,2447406,"akandes_python_backend/chips_interpreter.py",764,30,"print('Uppercase:', s.upper())",python,content
+589,2447436,"akandes_python_backend/chips_interpreter.py",798,20,"# List comprehension",python,content
+590,2447454,"akandes_python_backend/chips_interpreter.py",820,38,"squares = [x * x for x in range(1, 6)]",python,content
+591,2447470,"akandes_python_backend/chips_interpreter.py",860,26,"print('Squares:', squares)",python,content
+592,2465208,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+593,2465261,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+594,2465303,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+595,2465335,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+596,2465357,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+597,2465382,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+598,2465439,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+599,2465474,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+600,2465489,"akandes_python_backend/chips_interpreter.py",283,15,"greet('Akande')",python,content
+601,2465525,"akandes_python_backend/chips_interpreter.py",302,18,"for i in range(5):",python,content
+602,2465541,"akandes_python_backend/chips_interpreter.py",322,23,"    print('Number:', i)",python,content
+603,2465581,"akandes_python_backend/chips_interpreter.py",349,6,"x = 10",python,content
+604,2465607,"akandes_python_backend/chips_interpreter.py",357,9,"if x > 5:",python,content
+605,2465640,"akandes_python_backend/chips_interpreter.py",368,32,"    print('x is greater than 5')",python,content
+606,2465664,"akandes_python_backend/chips_interpreter.py",402,5,"else:",python,content
+607,2465689,"akandes_python_backend/chips_interpreter.py",409,27,"    print('x is 5 or less')",python,content
+608,2465724,"akandes_python_backend/chips_interpreter.py",440,13,"class Person:",python,content
+609,2465740,"akandes_python_backend/chips_interpreter.py",455,29,"    def __init__(self, name):",python,content
+610,2465758,"akandes_python_backend/chips_interpreter.py",486,24,"        self.name = name",python,content
+611,2465807,"akandes_python_backend/chips_interpreter.py",514,24,"    def say_hello(self):",python,content
+611,2465807,"akandes_python_backend/chips_interpreter.py",514,24,"    def say_hello(self):",python,content
+612,2465853,"akandes_python_backend/chips_interpreter.py",540,45,"        print('Hello, my name is', self.name)",python,content
+613,2465930,"akandes_python_backend/chips_interpreter.py",589,20,"p = Person('Akande')",python,content
+614,2465956,"akandes_python_backend/chips_interpreter.py",611,13,"p.say_hello()",python,content
+615,2465975,"akandes_python_backend/chips_interpreter.py",626,8,"        ",python,content
+616,2465998,"akandes_python_backend/chips_interpreter.py",636,23,"# Arithmetic operations",python,content
+617,2466008,"akandes_python_backend/chips_interpreter.py",661,18,"result = 2 + 3 * 4",python,content
+618,2466023,"akandes_python_backend/chips_interpreter.py",681,37,"print('Result of 2 + 3 * 4:', result)",python,content
+619,2466056,"akandes_python_backend/chips_interpreter.py",722,21,"# String manipulation",python,content
+620,2466071,"akandes_python_backend/chips_interpreter.py",745,17,"s = 'AkandeChips'",python,content
+621,2466087,"akandes_python_backend/chips_interpreter.py",764,30,"print('Uppercase:', s.upper())",python,content
+622,2466121,"akandes_python_backend/chips_interpreter.py",798,20,"# List comprehension",python,content
+623,2466136,"akandes_python_backend/chips_interpreter.py",820,38,"squares = [x * x for x in range(1, 6)]",python,content
+624,2466154,"akandes_python_backend/chips_interpreter.py",860,26,"print('Squares:', squares)",python,content
+625,2470357,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+626,2470383,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+627,2470405,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+628,2470433,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+629,2470449,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+630,2470465,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+631,2470507,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+632,2470525,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+633,2470545,"akandes_python_backend/chips_interpreter.py",283,15,"greet('Akande')",python,content
+634,2470576,"akandes_python_backend/chips_interpreter.py",302,18,"for i in range(5):",python,content
+635,2470600,"akandes_python_backend/chips_interpreter.py",322,23,"    print('Number:', i)",python,content
+636,2470628,"akandes_python_backend/chips_interpreter.py",349,6,"x = 10",python,content
+637,2470645,"akandes_python_backend/chips_interpreter.py",357,9,"if x > 5:",python,content
+638,2470669,"akandes_python_backend/chips_interpreter.py",368,32,"    print('x is greater than 5')",python,content
+639,2470686,"akandes_python_backend/chips_interpreter.py",402,5,"else:",python,content
+640,2470713,"akandes_python_backend/chips_interpreter.py",409,27,"    print('x is 5 or less')",python,content
+641,2470745,"akandes_python_backend/chips_interpreter.py",440,13,"class Person:",python,content
+642,2470761,"akandes_python_backend/chips_interpreter.py",455,29,"    def __init__(self, name):",python,content
+643,2470778,"akandes_python_backend/chips_interpreter.py",486,24,"        self.name = name",python,content
+644,2470799,"akandes_python_backend/chips_interpreter.py",512,0,"    def say_hello(self):",python,content
+645,2470827,"akandes_python_backend/chips_interpreter.py",538,24,"        print('Hello, my name is', self.name)",python,content
+646,2470851,"akandes_python_backend/chips_interpreter.py",585,45,"p = Person('Akande')",python,content
+647,2470865,"akandes_python_backend/chips_interpreter.py",607,0,"p.say_hello()",python,content
+648,2470884,"akandes_python_backend/chips_interpreter.py",622,20,"        ",python,content
+649,2470904,"akandes_python_backend/chips_interpreter.py",632,13,"# Arithmetic operations",python,content
+650,2470931,"akandes_python_backend/chips_interpreter.py",657,8,"result = 2 + 3 * 4",python,content
+651,2470946,"akandes_python_backend/chips_interpreter.py",677,23,"print('Result of 2 + 3 * 4:', result)",python,content
+652,2470964,"akandes_python_backend/chips_interpreter.py",716,18,"",python,content
+653,2470982,"akandes_python_backend/chips_interpreter.py",718,37,"# String manipulation",python,content
+654,2471000,"akandes_python_backend/chips_interpreter.py",741,0,"s = 'AkandeChips'",python,content
+655,2471016,"akandes_python_backend/chips_interpreter.py",760,21,"print('Uppercase:', s.upper())",python,content
+656,2471037,"akandes_python_backend/chips_interpreter.py",792,17,"",python,content
+657,2471085,"akandes_python_backend/chips_interpreter.py",794,30,"# List comprehension",python,content
+658,2471112,"akandes_python_backend/chips_interpreter.py",816,0,"squares = [x * x for x in range(1, 6)]",python,content
+659,2471128,"akandes_python_backend/chips_interpreter.py",856,20,"print('Squares:', squares)",python,content
+660,2471171,"akandes_python_backend/chips_interpreter.py",884,38,"",python,content
+661,2471198,"akandes_python_backend/chips_interpreter.py",886,26,"",python,content
+662,2471242,"akandes_python_backend/chips_interpreter.py",888,4,"",python,content
+663,2507029,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+664,2507065,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+665,2507098,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+666,2507125,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+667,2507142,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+668,2507159,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+669,2507191,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+670,2507208,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+671,2507224,"akandes_python_backend/chips_interpreter.py",283,15,"greet('Akande')",python,content
+672,2507255,"akandes_python_backend/chips_interpreter.py",302,18,"for i in range(5):",python,content
+673,2507272,"akandes_python_backend/chips_interpreter.py",322,23,"    print('Number:', i)",python,content
+674,2507306,"akandes_python_backend/chips_interpreter.py",349,6,"x = 10",python,content
+675,2507325,"akandes_python_backend/chips_interpreter.py",357,9,"if x > 5:",python,content
+676,2507342,"akandes_python_backend/chips_interpreter.py",368,32,"    print('x is greater than 5')",python,content
+677,2507358,"akandes_python_backend/chips_interpreter.py",402,5,"else:",python,content
+678,2507376,"akandes_python_backend/chips_interpreter.py",409,27,"    print('x is 5 or less')",python,content
+679,2507408,"akandes_python_backend/chips_interpreter.py",440,13,"class Person:",python,content
+680,2507430,"akandes_python_backend/chips_interpreter.py",455,29,"    def __init__(self, name):",python,content
+681,2507448,"akandes_python_backend/chips_interpreter.py",486,24,"        self.name = name",python,content
+682,2507466,"akandes_python_backend/chips_interpreter.py",512,24,"    def say_hello(self):",python,content
+683,2507491,"akandes_python_backend/chips_interpreter.py",538,45,"        print('Hello, my name is', self.name)",python,content
+684,2507509,"akandes_python_backend/chips_interpreter.py",585,20,"p = Person('Akande')",python,content
+685,2507526,"akandes_python_backend/chips_interpreter.py",607,13,"p.say_hello()",python,content
+686,2507542,"akandes_python_backend/chips_interpreter.py",622,8,"",python,content
+687,2507557,"akandes_python_backend/chips_interpreter.py",624,23,"",python,content
+688,2507576,"akandes_python_backend/chips_interpreter.py",626,18,"",python,content
+689,2507607,"akandes_python_backend/chips_interpreter.py",626,213,"",python,content
+690,2538753,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+691,2538805,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+692,2538858,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+693,2538875,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+694,2538892,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+695,2538909,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+696,2538939,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+697,2538957,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+698,2538972,"akandes_python_backend/chips_interpreter.py",283,15,"greet('Akande')",python,content
+699,2539005,"akandes_python_backend/chips_interpreter.py",302,18,"for i in range(5):",python,content
+700,2539021,"akandes_python_backend/chips_interpreter.py",322,23,"    print('Number:', i)",python,content
+701,2539058,"akandes_python_backend/chips_interpreter.py",349,6,"x = 10",python,content
+702,2539073,"akandes_python_backend/chips_interpreter.py",357,9,"if x > 5:",python,content
+703,2539090,"akandes_python_backend/chips_interpreter.py",368,32,"    print('x is greater than 5')",python,content
+704,2539109,"akandes_python_backend/chips_interpreter.py",402,5,"else:",python,content
+705,2539124,"akandes_python_backend/chips_interpreter.py",409,27,"    print('x is 5 or less')",python,content
+706,2539157,"akandes_python_backend/chips_interpreter.py",440,13,"class Person:",python,content
+707,2539174,"akandes_python_backend/chips_interpreter.py",455,29,"    def __init__(self, name):",python,content
+708,2539190,"akandes_python_backend/chips_interpreter.py",486,24,"        self.name = name",python,content
+709,2539210,"akandes_python_backend/chips_interpreter.py",512,24,"    def say_hello(self):",python,content
+710,2539226,"akandes_python_backend/chips_interpreter.py",538,45,"        print('Hello, my name is', self.name)",python,content
+711,2539243,"akandes_python_backend/chips_interpreter.py",585,20,"p = Person('Akande')",python,content
+712,2539260,"akandes_python_backend/chips_interpreter.py",607,13,"p.say_hello()",python,content
+713,2539291,"akandes_python_backend/chips_interpreter.py",624,0,"squares = [x * x for x in range(1, 6)]",python,content
+714,2539308,"akandes_python_backend/chips_interpreter.py",664,0,"print('Squares:', squares)",python,content
+715,2539325,"akandes_python_backend/chips_interpreter.py",690,0,"\r\n",python,content
+716,2539344,"akandes_python_backend/chips_interpreter.py",692,0,"\r\n",python,content
+717,2539364,"akandes_python_backend/chips_interpreter.py",694,0,"\r\n",python,content
+718,2571627,"akandes_python_backend/chips_interpreter.py",0,58,"# Simple interpreter for .chips files (Python-like subset)",python,content
+719,2571667,"akandes_python_backend/chips_interpreter.py",60,34,"def run_chips_file(filename: str):",python,content
+720,2571710,"akandes_python_backend/chips_interpreter.py",96,34,"    with open(filename, 'r') as f:",python,content
+721,2571730,"akandes_python_backend/chips_interpreter.py",132,23,"        code = f.read()",python,content
+722,2571753,"akandes_python_backend/chips_interpreter.py",157,57,"    # For now, just execute as Python (for demo purposes)",python,content
+723,2571772,"akandes_python_backend/chips_interpreter.py",216,18,"    exec(code, {})",python,content
+724,2571814,"akandes_python_backend/chips_interpreter.py",238,16,"def greet(name):",python,content
+725,2571846,"akandes_python_backend/chips_interpreter.py",256,25,"    print('Hello,', name)",python,content
+726,2571880,"akandes_python_backend/chips_interpreter.py",283,15,"greet('Akande')",python,content
+727,2571919,"akandes_python_backend/chips_interpreter.py",302,18,"for i in range(5):",python,content
+728,2571935,"akandes_python_backend/chips_interpreter.py",322,23,"    print('Number:', i)",python,content
+729,2571972,"akandes_python_backend/chips_interpreter.py",349,6,"x = 10",python,content
+730,2572005,"akandes_python_backend/chips_interpreter.py",357,9,"if x > 5:",python,content
+731,2572024,"akandes_python_backend/chips_interpreter.py",368,32,"    print('x is greater than 5')",python,content
+732,2572041,"akandes_python_backend/chips_interpreter.py",402,5,"else:",python,content
+733,2572060,"akandes_python_backend/chips_interpreter.py",409,27,"    print('x is 5 or less')",python,content
+734,2572094,"akandes_python_backend/chips_interpreter.py",440,13,"class Person:",python,content
+735,2572111,"akandes_python_backend/chips_interpreter.py",455,29,"    def __init__(self, name):",python,content
+736,2572126,"akandes_python_backend/chips_interpreter.py",486,24,"        self.name = name",python,content
+737,2572154,"akandes_python_backend/chips_interpreter.py",512,24,"    def say_hello(self):",python,content
+738,2572176,"akandes_python_backend/chips_interpreter.py",538,45,"        print('Hello, my name is', self.name)",python,content
+739,2572190,"akandes_python_backend/chips_interpreter.py",585,20,"p = Person('Akande')",python,content
+740,2572207,"akandes_python_backend/chips_interpreter.py",607,13,"p.say_hello()",python,content
+741,2572255,"akandes_python_backend/chips_interpreter.py",624,38,"squares = [x * x for x in range(1, 6)]",python,content
+742,2572273,"akandes_python_backend/chips_interpreter.py",664,26,"print('Squares:', squares)",python,content
+743,3085093,"akandes_python_backend/chips_interpreter.py",0,0,"# Simple interpreter for .chips files (Python-like subset)\r\ndef run_chips_file(filename: str):\r\n    with open(filename, 'r') as f:\r\n        code = f.read()\r\n    # For now, just execute as Python (for demo purposes)\r\n    exec(code, {})\r\n\r\ndef greet(name):\r\n    print('Hello,', name)\r\ngreet('Akande')\r\n\r\nfor i in range(5):\r\n    print('Number:', i)\r\n\r\nx = 10\r\nif x > 5:\r\n    print('x is greater than 5')\r\nelse:\r\n    print('x is 5 or less')\r\n\r\nclass Person:\r\n    def __init__(self, name):\r\n        self.name = name\r\n    def say_hello(self):\r\n        print('Hello, my name is', self.name)\r\np = Person('Akande')\r\np.say_hello()\r\n\r\nsquares = [x * x for x in range(1, 6)]\r\nprint('Squares:', squares)\r\n\r\n\r\n",python,tab
+744,3100409,"AKANDECHIPS_LANGUAGE_DOCUMENTATION.md",0,0,"# AkandeChips Language Documentation\r\n\r\n## Overview\r\nAkandeChips is a Python-like language interpreted by a custom interpreter. You can use most Python syntax and features in `.chips` files.\r\n\r\n## Supported Features\r\n- Print statements\r\n- Function definitions and calls\r\n- For loops\r\n- Conditionals\r\n- Classes and objects\r\n- Arithmetic operations\r\n- String manipulation\r\n- List comprehensions\r\n\r\n## Example Code\r\n```python\r\ndef greet(name):\r\n    print('Hello,', name)\r\ngreet('Akande')\r\n\r\nfor i in range(5):\r\n    print('Number:', i)\r\n\r\nx = 10\r\nif x > 5:\r\n    print('x is greater than 5')\r\nelse:\r\n    print('x is 5 or less')\r\n\r\nclass Person:\r\n    def __init__(self, name):\r\n        self.name = name\r\n    def say_hello(self):\r\n        print('Hello, my name is', self.name)\r\np = Person('Akande')\r\np.say_hello()\r\n\r\nsquares = [x * x for x in range(1, 6)]\r\nprint('Squares:', squares)\r\n```\r\n\r\n## How to Run\r\n1. Save your code in a `.chips` file.\r\n2. Run the interpreter:\r\n   ```\r\n   C:/Python313/python.exe akandes_python_backend/chips_interpreter.py yourfile.chips\r\n   ```\r\n3. See the output in the terminal.\r\n\r\n## Extending the Language\r\n- You can add more features by editing `chips_interpreter.py`.\r\n- For custom syntax or new keywords, update the interpreter logic.\r\n\r\n---\r\n\r\n*This documentation was generated from your interactive coding session.*\r\n",markdown,tab
+745,3108237,"AKANDECHIPS_LANGUAGE_DOCUMENTATION.md",0,0,"# AkandeChips Language Documentation\r\n\r\n## Overview\r\nAkandeChips is a Python-like language interpreted by a custom interpreter. You can use most Python syntax and features in `.chips` files.\r\n\r\n## Supported Features\r\n- Print statements\r\n- Function definitions and calls\r\n- For loops\r\n- Conditionals\r\n- Classes and objects\r\n- Arithmetic operations\r\n- String manipulation\r\n- List comprehensions\r\n\r\n## Example Code\r\n```python\r\ndef greet(name):\r\n    print('Hello,', name)\r\ngreet('Akande')\r\n\r\nfor i in range(5):\r\n    print('Number:', i)\r\n\r\nx = 10\r\nif x > 5:\r\n    print('x is greater than 5')\r\nelse:\r\n    print('x is 5 or less')\r\n\r\nclass Person:\r\n    def __init__(self, name):\r\n        self.name = name\r\n    def say_hello(self):\r\n        print('Hello, my name is', self.name)\r\np = Person('Akande')\r\np.say_hello()\r\n\r\nsquares = [x * x for x in range(1, 6)]\r\nprint('Squares:', squares)\r\n```\r\n\r\n## How to Run\r\n1. Save your code in a `.chips` file.\r\n2. Run the interpreter:\r\n   ```\r\n   C:/Python313/python.exe akandes_python_backend/chips_interpreter.py yourfile.chips\r\n   ```\r\n3. See the output in the terminal.\r\n\r\n## Extending the Language\r\n- You can add more features by editing `chips_interpreter.py`.\r\n- For custom syntax or new keywords, update the interpreter logic.\r\n\r\n---\r\n\r\n*This documentation was generated from your interactive coding session.*\r\n",markdown,tab
+746,3114294,"snippets/akandechips.code-snippets",0,0,"{\r\n  ""Print Statement"": {\r\n    ""prefix"": ""print"",\r\n    ""body"": [""print('$1')""],\r\n    ""description"": ""Print statement""\r\n  },\r\n  ""Function Definition"": {\r\n    ""prefix"": ""def"",\r\n    ""body"": [""def $1($2):"", ""    $0""],\r\n    ""description"": ""Function definition""\r\n  },\r\n  ""If Statement"": {\r\n    ""prefix"": ""if"",\r\n    ""body"": [""if $1:"", ""    $0""],\r\n    ""description"": ""If statement""\r\n  }\r\n}\r\n",snippets,tab
+747,3116417,"AKANDECHIPS_LANGUAGE_DOCUMENTATION.md",0,0,"# AkandeChips Language Documentation\r\n\r\n## Overview\r\nAkandeChips is a Python-like language interpreted by a custom interpreter. You can use most Python syntax and features in `.chips` files.\r\n\r\n## Supported Features\r\n- Print statements\r\n- Function definitions and calls\r\n- For loops\r\n- Conditionals\r\n- Classes and objects\r\n- Arithmetic operations\r\n- String manipulation\r\n- List comprehensions\r\n\r\n## Example Code\r\n```python\r\ndef greet(name):\r\n    print('Hello,', name)\r\ngreet('Akande')\r\n\r\nfor i in range(5):\r\n    print('Number:', i)\r\n\r\nx = 10\r\nif x > 5:\r\n    print('x is greater than 5')\r\nelse:\r\n    print('x is 5 or less')\r\n\r\nclass Person:\r\n    def __init__(self, name):\r\n        self.name = name\r\n    def say_hello(self):\r\n        print('Hello, my name is', self.name)\r\np = Person('Akande')\r\np.say_hello()\r\n\r\nsquares = [x * x for x in range(1, 6)]\r\nprint('Squares:', squares)\r\n```\r\n\r\n## How to Run\r\n1. Save your code in a `.chips` file.\r\n2. Run the interpreter:\r\n   ```\r\n   C:/Python313/python.exe akandes_python_backend/chips_interpreter.py yourfile.chips\r\n   ```\r\n3. See the output in the terminal.\r\n\r\n## Extending the Language\r\n- You can add more features by editing `chips_interpreter.py`.\r\n- For custom syntax or new keywords, update the interpreter logic.\r\n\r\n---\r\n\r\n*This documentation was generated from your interactive coding session.*\r\n",markdown,tab
+748,3122336,"snippets/akandechips.code-snippets",0,0,"{\r\n  ""Print Statement"": {\r\n    ""prefix"": ""print"",\r\n    ""body"": [""print('$1')""],\r\n    ""description"": ""Print statement""\r\n  },\r\n  ""Function Definition"": {\r\n    ""prefix"": ""def"",\r\n    ""body"": [""def $1($2):"", ""    $0""],\r\n    ""description"": ""Function definition""\r\n  },\r\n  ""If Statement"": {\r\n    ""prefix"": ""if"",\r\n    ""body"": [""if $1:"", ""    $0""],\r\n    ""description"": ""If statement""\r\n  }\r\n}\r\n",snippets,tab
+749,3133843,"language-configuration.json",0,0,"{\r\n  ""comments"": {\r\n    ""lineComment"": ""#""\r\n  },\r\n  ""brackets"": [\r\n    [""["", ""]""],\r\n    [""{"", ""}""]\r\n  ],\r\n  ""autoClosingPairs"": [\r\n    { ""open"": ""["", ""close"": ""]"" },\r\n    { ""open"": ""{"", ""close"": ""}"" },\r\n    { ""open"": ""'"", ""close"": ""'"", ""notIn"": [""string""] },\r\n    { ""open"": ""\"""", ""close"": ""\"""", ""notIn"": [""string""] }\r\n  ],\r\n  ""surroundingPairs"": [\r\n    { ""open"": ""["", ""close"": ""]"" },\r\n    { ""open"": ""{"", ""close"": ""}"" },\r\n    { ""open"": ""'"", ""close"": ""'"" },\r\n    { ""open"": ""\"""", ""close"": ""\"""" }\r\n  ]\r\n}\r\n",jsonc,tab
+750,3137483,"snippets/akandechips.code-snippets",0,0,"{\r\n  ""Print Statement"": {\r\n    ""prefix"": ""print"",\r\n    ""body"": [""print('$1')""],\r\n    ""description"": ""Print statement""\r\n  },\r\n  ""Function Definition"": {\r\n    ""prefix"": ""def"",\r\n    ""body"": [""def $1($2):"", ""    $0""],\r\n    ""description"": ""Function definition""\r\n  },\r\n  ""If Statement"": {\r\n    ""prefix"": ""if"",\r\n    ""body"": [""if $1:"", ""    $0""],\r\n    ""description"": ""If statement""\r\n  }\r\n}\r\n",snippets,tab
+751,3139067,"src/extension.ts",0,0,"// The module 'vscode' contains the VS Code extensibility API\n// Import the module and reference it with the alias vscode in your code below\nimport * as vscode from 'vscode';\nimport { activateLanguageClient, deactivateLanguageClient } from './client';\n\n// This method is called when your extension is activated\n// Your extension is activated the very first time the command is executed\nexport function activate(context: vscode.ExtensionContext) {\n\n\t// Output diagnostic information\n\tconsole.log('Congratulations, your extension ""AkandeChips"" is now active!');\n\n\t// Register Hello World command\n\tconst disposable = vscode.commands.registerCommand('AkandeChips.helloWorld', () => {\n\t\tvscode.window.showInformationMessage('Hello World from Akande!');\n\t});\n\tcontext.subscriptions.push(disposable);\n\n\t// Activate the language client (connect to Python backend)\n\tactivateLanguageClient(context);\n}\n\n// This method is called when your extension is deactivated\nexport function deactivate() {\n\treturn deactivateLanguageClient();\n}\n",typescript,tab
+752,3150224,"akandes_python_backend/server.py",0,0,"\r\n# Minimal, version-agnostic pygls LSP server for AkandeChips\r\nfrom pygls.server import LanguageServer\r\nfrom pygls.lsp.types import (\r\n    InitializeParams, TextDocumentSyncKind, TextDocumentSyncOptions, DidOpenTextDocumentParams,\r\n    CompletionParams, CompletionItem, CompletionList, Diagnostic, DiagnosticSeverity, Position, Range, Hover, MarkupContent\r\n)\r\n\r\nclass AkandeLanguageServer(LanguageServer):\r\n    def __init__(self):\r\n        super().__init__(""akandechips-lsp"", ""0.1.0"")\r\n\r\nserver = AkandeLanguageServer()\r\n\r\n@server.feature('initialize')\r\ndef on_initialize(ls, params):\r\n    sync_kind = getattr(TextDocumentSyncKind, 'FULL', 1)\r\n    return {\r\n        'capabilities': {\r\n            'textDocumentSync': TextDocumentSyncOptions(\r\n                open_close=True,\r\n                change=sync_kind\r\n            ),\r\n            'hoverProvider': True,\r\n            'completionProvider': {'resolveProvider': False}\r\n        }\r\n    }\r\n\r\n@server.feature('textDocument/didOpen')\r\ndef did_open(ls, params):\r\n    ls.show_message('AkandeChips LSP: File opened!')\r\n    text = getattr(params.textDocument, 'text', None)\r\n    diagnostics = []\r\n    if text:\r\n        for i, line in enumerate(text.splitlines()):\r\n            if 'todo' in line.lower():\r\n                sev = getattr(DiagnosticSeverity, 'Warning', getattr(DiagnosticSeverity, 'WARNING', 2))\r\n                diagnostics.append(Diagnostic(\r\n                    range=Range(start=Position(line=i, character=0), end=Position(line=i, character=len(line))),\r\n                    message=""Found TODO in code."",\r\n                    severity=sev\r\n                ))\r\n    ls.publish_diagnostics(params.textDocument.uri, diagnostics)\r\n\r\n@server.feature('textDocument/hover')\r\ndef hover(ls, params):\r\n    doc = ls.workspace.get_document(params.textDocument.uri)\r\n    word = doc.word_at_position(params.position)\r\n    try:\r\n        markup = MarkupContent(kind='markdown', value='**print**: Output text to the console.')\r\n    except Exception:\r\n        markup = {'kind': 'markdown', 'value': '**print**: Output text to the console.'}\r\n    if word == 'print':\r\n        return Hover(contents=markup)\r\n    return None\r\n\r\n@server.feature('textDocument/completion')\r\ndef completions(ls, params):\r\n    items = [\r\n        CompletionItem(label='print', detail='Print statement'),\r\n        CompletionItem(label='def', detail='Function definition'),\r\n        CompletionItem(label='if', detail='If statement')\r\n    ]\r\n    return CompletionList(is_incomplete=False, items=items)\r\n\r\nif __name__ == '__main__':\r\n    server.start_io()\r\n",python,tab
+753,3158668,"syntaxes/akandechips.tmLanguage.json",0,0,"{\r\n  ""scopeName"": ""source.akandechips"",\r\n  ""name"": ""AkandeChips"",\r\n  ""patterns"": [\r\n    { ""name"": ""comment.line.number-sign.akandechips"", ""match"": ""#.*$"" },\r\n    { ""name"": ""keyword.control.akandechips"", ""match"": ""\\b(if|else|for|while|return|def|class)\\b"" },\r\n    { ""name"": ""string.quoted.double.akandechips"", ""begin"": ""\"""", ""end"": ""\"""" },\r\n    { ""name"": ""string.quoted.single.akandechips"", ""begin"": ""'"", ""end"": ""'"" },\r\n    { ""name"": ""constant.numeric.akandechips"", ""match"": ""\\b\\d+\\b"" },\r\n    { ""name"": ""variable.akandechips"", ""match"": ""\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"" }\r\n  ],\r\n  ""repository"": {},\r\n  ""fileTypes"": [""akande"", ""chips""],\r\n  ""uuid"": ""b1e1e1e1-1111-1111-1111-111111111111""\r\n}\r\n",json,tab
+754,3162138,"snippets/akandechips.code-snippets",0,0,"{\r\n  ""Print Statement"": {\r\n    ""prefix"": ""print"",\r\n    ""body"": [""print('$1')""],\r\n    ""description"": ""Print statement""\r\n  },\r\n  ""Function Definition"": {\r\n    ""prefix"": ""def"",\r\n    ""body"": [""def $1($2):"", ""    $0""],\r\n    ""description"": ""Function definition""\r\n  },\r\n  ""If Statement"": {\r\n    ""prefix"": ""if"",\r\n    ""body"": [""if $1:"", ""    $0""],\r\n    ""description"": ""If statement""\r\n  }\r\n}\r\n",snippets,tab
+755,3169201,"akandes_python_backend/chips_interpreter.py",0,0,"# Simple interpreter for .chips files (Python-like subset)\r\ndef run_chips_file(filename: str):\r\n    with open(filename, 'r') as f:\r\n        code = f.read()\r\n    # For now, just execute as Python (for demo purposes)\r\n    exec(code, {})\r\n\r\ndef greet(name):\r\n    print('Hello,', name)\r\ngreet('Akande')\r\n\r\nfor i in range(5):\r\n    print('Number:', i)\r\n\r\nx = 10\r\nif x > 5:\r\n    print('x is greater than 5')\r\nelse:\r\n    print('x is 5 or less')\r\n\r\nclass Person:\r\n    def __init__(self, name):\r\n        self.name = name\r\n    def say_hello(self):\r\n        print('Hello, my name is', self.name)\r\np = Person('Akande')\r\np.say_hello()\r\n\r\nsquares = [x * x for x in range(1, 6)]\r\nprint('Squares:', squares)\r\n\r\n\r\n",python,tab
+756,3205511,"snippets/akandechips.code-snippets",0,0,"{\r\n  ""Print Statement"": {\r\n    ""prefix"": ""print"",\r\n    ""body"": [""print('$1')""],\r\n    ""description"": ""Print statement""\r\n  },\r\n  ""Function Definition"": {\r\n    ""prefix"": ""def"",\r\n    ""body"": [""def $1($2):"", ""    $0""],\r\n    ""description"": ""Function definition""\r\n  },\r\n  ""If Statement"": {\r\n    ""prefix"": ""if"",\r\n    ""body"": [""if $1:"", ""    $0""],\r\n    ""description"": ""If statement""\r\n  }\r\n}\r\n",snippets,tab
+757,3207359,"syntaxes/akandechips.tmLanguage.json",0,0,"{\r\n  ""scopeName"": ""source.akandechips"",\r\n  ""name"": ""AkandeChips"",\r\n  ""patterns"": [\r\n    { ""name"": ""comment.line.number-sign.akandechips"", ""match"": ""#.*$"" },\r\n    { ""name"": ""keyword.control.akandechips"", ""match"": ""\\b(if|else|for|while|return|def|class)\\b"" },\r\n    { ""name"": ""string.quoted.double.akandechips"", ""begin"": ""\"""", ""end"": ""\"""" },\r\n    { ""name"": ""string.quoted.single.akandechips"", ""begin"": ""'"", ""end"": ""'"" },\r\n    { ""name"": ""constant.numeric.akandechips"", ""match"": ""\\b\\d+\\b"" },\r\n    { ""name"": ""variable.akandechips"", ""match"": ""\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"" }\r\n  ],\r\n  ""repository"": {},\r\n  ""fileTypes"": [""akande"", ""chips""],\r\n  ""uuid"": ""b1e1e1e1-1111-1111-1111-111111111111""\r\n}\r\n",json,tab
+758,3219472,"src/extension.ts",0,0,"// The module 'vscode' contains the VS Code extensibility API\n// Import the module and reference it with the alias vscode in your code below\nimport * as vscode from 'vscode';\nimport { activateLanguageClient, deactivateLanguageClient } from './client';\n\n// This method is called when your extension is activated\n// Your extension is activated the very first time the command is executed\nexport function activate(context: vscode.ExtensionContext) {\n\n\t// Output diagnostic information\n\tconsole.log('Congratulations, your extension ""AkandeChips"" is now active!');\n\n\t// Register Hello World command\n\tconst disposable = vscode.commands.registerCommand('AkandeChips.helloWorld', () => {\n\t\tvscode.window.showInformationMessage('Hello World from Akande!');\n\t});\n\tcontext.subscriptions.push(disposable);\n\n\t// Activate the language client (connect to Python backend)\n\tactivateLanguageClient(context);\n}\n\n// This method is called when your extension is deactivated\nexport function deactivate() {\n\treturn deactivateLanguageClient();\n}\n",typescript,tab
+759,3226456,"syntaxes/akandechips.tmLanguage.json",0,0,"{\r\n  ""scopeName"": ""source.akandechips"",\r\n  ""name"": ""AkandeChips"",\r\n  ""patterns"": [\r\n    { ""name"": ""comment.line.number-sign.akandechips"", ""match"": ""#.*$"" },\r\n    { ""name"": ""keyword.control.akandechips"", ""match"": ""\\b(if|else|for|while|return|def|class)\\b"" },\r\n    { ""name"": ""string.quoted.double.akandechips"", ""begin"": ""\"""", ""end"": ""\"""" },\r\n    { ""name"": ""string.quoted.single.akandechips"", ""begin"": ""'"", ""end"": ""'"" },\r\n    { ""name"": ""constant.numeric.akandechips"", ""match"": ""\\b\\d+\\b"" },\r\n    { ""name"": ""variable.akandechips"", ""match"": ""\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"" }\r\n  ],\r\n  ""repository"": {},\r\n  ""fileTypes"": [""akande"", ""chips""],\r\n  ""uuid"": ""b1e1e1e1-1111-1111-1111-111111111111""\r\n}\r\n",json,tab
+760,3229874,"snippets/akandechips.code-snippets",0,0,"{\r\n  ""Print Statement"": {\r\n    ""prefix"": ""print"",\r\n    ""body"": [""print('$1')""],\r\n    ""description"": ""Print statement""\r\n  },\r\n  ""Function Definition"": {\r\n    ""prefix"": ""def"",\r\n    ""body"": [""def $1($2):"", ""    $0""],\r\n    ""description"": ""Function definition""\r\n  },\r\n  ""If Statement"": {\r\n    ""prefix"": ""if"",\r\n    ""body"": [""if $1:"", ""    $0""],\r\n    ""description"": ""If statement""\r\n  }\r\n}\r\n",snippets,tab
+761,3232465,"akandes_python_backend/chips_interpreter.py",0,0,"# Simple interpreter for .chips files (Python-like subset)\r\ndef run_chips_file(filename: str):\r\n    with open(filename, 'r') as f:\r\n        code = f.read()\r\n    # For now, just execute as Python (for demo purposes)\r\n    exec(code, {})\r\n\r\ndef greet(name):\r\n    print('Hello,', name)\r\ngreet('Akande')\r\n\r\nfor i in range(5):\r\n    print('Number:', i)\r\n\r\nx = 10\r\nif x > 5:\r\n    print('x is greater than 5')\r\nelse:\r\n    print('x is 5 or less')\r\n\r\nclass Person:\r\n    def __init__(self, name):\r\n        self.name = name\r\n    def say_hello(self):\r\n        print('Hello, my name is', self.name)\r\np = Person('Akande')\r\np.say_hello()\r\n\r\nsquares = [x * x for x in range(1, 6)]\r\nprint('Squares:', squares)\r\n\r\n\r\n",python,tab
+762,3236366,"akandes_lsp/README.md",0,0,"# AkandeChips LSP\r\n\r\nThis folder is reserved for any additional LSP-related code or documentation for the AkandeChips project.\r\n\r\n## Purpose\r\n- Store LSP protocol definitions, shared utilities, or documentation.\r\n\r\n## Usage\r\n- Add any LSP-specific files or notes here as the project evolves.\r\n",markdown,tab
+763,3239030,"akandes_python_backend/chips_interpreter.py",0,0,"# Simple interpreter for .chips files (Python-like subset)\r\ndef run_chips_file(filename: str):\r\n    with open(filename, 'r') as f:\r\n        code = f.read()\r\n    # For now, just execute as Python (for demo purposes)\r\n    exec(code, {})\r\n\r\ndef greet(name):\r\n    print('Hello,', name)\r\ngreet('Akande')\r\n\r\nfor i in range(5):\r\n    print('Number:', i)\r\n\r\nx = 10\r\nif x > 5:\r\n    print('x is greater than 5')\r\nelse:\r\n    print('x is 5 or less')\r\n\r\nclass Person:\r\n    def __init__(self, name):\r\n        self.name = name\r\n    def say_hello(self):\r\n        print('Hello, my name is', self.name)\r\np = Person('Akande')\r\np.say_hello()\r\n\r\nsquares = [x * x for x in range(1, 6)]\r\nprint('Squares:', squares)\r\n\r\n\r\n",python,tab
+764,3240191,"akandes_python_backend/README.md",0,0,"# AkandeChips Python Backend\r\n\r\nThis folder is intended for the Python Language Server backend that will be used by the AkandeChips VS Code extension.\r\n\r\n## Getting Started\r\n- Set up your Python environment (a virtual environment is recommended).\r\n- Implement the Language Server Protocol (LSP) using a library such as `pygls` or `python-lsp-server`.\r\n- Ensure the server can be started from the extension (e.g., via a script or entry point).\r\n\r\n## Example Libraries\r\n- [pygls](https://github.com/openlawlibrary/pygls)\r\n- [python-lsp-server](https://github.com/python-lsp/python-lsp-server)\r\n\r\n## Development\r\n- The extension will launch this backend as a subprocess.\r\n- Communicate using stdio or TCP as required by the LSP.\r\n",markdown,tab
+765,3241544,"akandes_python_backend/chips_interpreter.py",0,0,"# Simple interpreter for .chips files (Python-like subset)\r\ndef run_chips_file(filename: str):\r\n    with open(filename, 'r') as f:\r\n        code = f.read()\r\n    # For now, just execute as Python (for demo purposes)\r\n    exec(code, {})\r\n\r\ndef greet(name):\r\n    print('Hello,', name)\r\ngreet('Akande')\r\n\r\nfor i in range(5):\r\n    print('Number:', i)\r\n\r\nx = 10\r\nif x > 5:\r\n    print('x is greater than 5')\r\nelse:\r\n    print('x is 5 or less')\r\n\r\nclass Person:\r\n    def __init__(self, name):\r\n        self.name = name\r\n    def say_hello(self):\r\n        print('Hello, my name is', self.name)\r\np = Person('Akande')\r\np.say_hello()\r\n\r\nsquares = [x * x for x in range(1, 6)]\r\nprint('Squares:', squares)\r\n\r\n\r\n",python,tab
+766,3243128,"README.md",0,0,"# AkandeChips VS Code Extension\n\nThis is a VS Code extension scaffolded with Yeoman and Generator-Code. It is intended to provide language support and connect to a Python backend (LSP).\n\n## Features\n\n- Language support for AkandeChips Programming Language\n- Connects to a Python Language Server backend\n\n## Getting Started\n\n1. Open this folder in VS Code.\n2. Run `npm install` to install dependencies.\n3. Press `F5` to launch the extension in a new Extension Development Host window.\n\n## Development\n\n- The extension is written in TypeScript.\n- The backend Language Server should be implemented in Python and started by the extension.\n\n## Resources\n\n- [VS Code Extension API](https://code.visualstudio.com/api)\n- [VS Code Language Server Protocol](https://microsoft.github.io/language-server-protocol/)\n\n---\n\nFor workspace-specific Copilot instructions, see `.github/copilot-instructions.md`.\n",markdown,tab
+767,3244230,"akandes_python_backend/chips_interpreter.py",0,0,"# Simple interpreter for .chips files (Python-like subset)\r\ndef run_chips_file(filename: str):\r\n    with open(filename, 'r') as f:\r\n        code = f.read()\r\n    # For now, just execute as Python (for demo purposes)\r\n    exec(code, {})\r\n\r\ndef greet(name):\r\n    print('Hello,', name)\r\ngreet('Akande')\r\n\r\nfor i in range(5):\r\n    print('Number:', i)\r\n\r\nx = 10\r\nif x > 5:\r\n    print('x is greater than 5')\r\nelse:\r\n    print('x is 5 or less')\r\n\r\nclass Person:\r\n    def __init__(self, name):\r\n        self.name = name\r\n    def say_hello(self):\r\n        print('Hello, my name is', self.name)\r\np = Person('Akande')\r\np.say_hello()\r\n\r\nsquares = [x * x for x in range(1, 6)]\r\nprint('Squares:', squares)\r\n\r\n\r\n",python,tab
+768,3245990,"src/client.ts",0,0,"import * as path from 'path';\r\nimport { workspace, ExtensionContext } from 'vscode';\r\nimport {\r\n  LanguageClient,\r\n  LanguageClientOptions,\r\n  ServerOptions\r\n} from 'vscode-languageclient/node';\r\n\r\nlet client: LanguageClient;\r\n\r\nexport function activateLanguageClient(context: ExtensionContext) {\r\n  // Path to the Python language server script\r\n  const serverScript = context.asAbsolutePath(path.join('..', 'akandes_python_backend', 'server.py'));\r\n\r\n  // Server options for launching the Python LSP\r\n  const serverOptions: ServerOptions = {\r\n    command: 'python',\r\n    args: [serverScript],\r\n    options: { cwd: path.dirname(serverScript) }\r\n  };\r\n\r\n  // Client options\r\n  const clientOptions: LanguageClientOptions = {\r\n    documentSelector: [{ scheme: 'file', language: 'akandechips' }],\r\n    synchronize: {\r\n      fileEvents: workspace.createFileSystemWatcher('**/.clientrc')\r\n    }\r\n  };\r\n\r\n  // Create the language client\r\n  client = new LanguageClient(\r\n    'akandeLanguageServer',\r\n    'AkandeChips Language Server',\r\n    serverOptions,\r\n    clientOptions\r\n  );\r\n\r\n  // Start the client\r\n  client.start();\r\n  // Add the client to subscriptions for proper disposal\r\n  context.subscriptions.push(client);\r\n}\r\n\r\nexport function deactivateLanguageClient(): Thenable<void> | undefined {\r\n  if (!client) {\r\n    return undefined;\r\n  }\r\n  return client.stop();\r\n}\r\n",typescript,tab
+769,3253198,"akandes_python_backend/server.py",0,0,"\r\n# Minimal, version-agnostic pygls LSP server for AkandeChips\r\nfrom pygls.server import LanguageServer\r\nfrom pygls.lsp.types import (\r\n    InitializeParams, TextDocumentSyncKind, TextDocumentSyncOptions, DidOpenTextDocumentParams,\r\n    CompletionParams, CompletionItem, CompletionList, Diagnostic, DiagnosticSeverity, Position, Range, Hover, MarkupContent\r\n)\r\n\r\nclass AkandeLanguageServer(LanguageServer):\r\n    def __init__(self):\r\n        super().__init__(""akandechips-lsp"", ""0.1.0"")\r\n\r\nserver = AkandeLanguageServer()\r\n\r\n@server.feature('initialize')\r\ndef on_initialize(ls, params):\r\n    sync_kind = getattr(TextDocumentSyncKind, 'FULL', 1)\r\n    return {\r\n        'capabilities': {\r\n            'textDocumentSync': TextDocumentSyncOptions(\r\n                open_close=True,\r\n                change=sync_kind\r\n            ),\r\n            'hoverProvider': True,\r\n            'completionProvider': {'resolveProvider': False}\r\n        }\r\n    }\r\n\r\n@server.feature('textDocument/didOpen')\r\ndef did_open(ls, params):\r\n    ls.show_message('AkandeChips LSP: File opened!')\r\n    text = getattr(params.textDocument, 'text', None)\r\n    diagnostics = []\r\n    if text:\r\n        for i, line in enumerate(text.splitlines()):\r\n            if 'todo' in line.lower():\r\n                sev = getattr(DiagnosticSeverity, 'Warning', getattr(DiagnosticSeverity, 'WARNING', 2))\r\n                diagnostics.append(Diagnostic(\r\n                    range=Range(start=Position(line=i, character=0), end=Position(line=i, character=len(line))),\r\n                    message=""Found TODO in code."",\r\n                    severity=sev\r\n                ))\r\n    ls.publish_diagnostics(params.textDocument.uri, diagnostics)\r\n\r\n@server.feature('textDocument/hover')\r\ndef hover(ls, params):\r\n    doc = ls.workspace.get_document(params.textDocument.uri)\r\n    word = doc.word_at_position(params.position)\r\n    try:\r\n        markup = MarkupContent(kind='markdown', value='**print**: Output text to the console.')\r\n    except Exception:\r\n        markup = {'kind': 'markdown', 'value': '**print**: Output text to the console.'}\r\n    if word == 'print':\r\n        return Hover(contents=markup)\r\n    return None\r\n\r\n@server.feature('textDocument/completion')\r\ndef completions(ls, params):\r\n    items = [\r\n        CompletionItem(label='print', detail='Print statement'),\r\n        CompletionItem(label='def', detail='Function definition'),\r\n        CompletionItem(label='if', detail='If statement')\r\n    ]\r\n    return CompletionList(is_incomplete=False, items=items)\r\n\r\nif __name__ == '__main__':\r\n    server.start_io()\r\n",python,tab
+770,3254709,"akandes_python_backend/chips_interpreter.py",0,0,"# Simple interpreter for .chips files (Python-like subset)\r\ndef run_chips_file(filename: str):\r\n    with open(filename, 'r') as f:\r\n        code = f.read()\r\n    # For now, just execute as Python (for demo purposes)\r\n    exec(code, {})\r\n\r\ndef greet(name):\r\n    print('Hello,', name)\r\ngreet('Akande')\r\n\r\nfor i in range(5):\r\n    print('Number:', i)\r\n\r\nx = 10\r\nif x > 5:\r\n    print('x is greater than 5')\r\nelse:\r\n    print('x is 5 or less')\r\n\r\nclass Person:\r\n    def __init__(self, name):\r\n        self.name = name\r\n    def say_hello(self):\r\n        print('Hello, my name is', self.name)\r\np = Person('Akande')\r\np.say_hello()\r\n\r\nsquares = [x * x for x in range(1, 6)]\r\nprint('Squares:', squares)\r\n\r\n\r\n",python,tab
+771,3435702,"hdl_projects/and_gate.v",0,0,"// Simple AND gate in Verilog\r\nmodule and_gate(\r\n    input a,\r\n    input b,\r\n    output y\r\n);\r\n    assign y = a & b;\r\nendmodule\r\n",akandes-verilog,tab
+772,7696252,"hdl_projects/and_gate.v",0,29,"// Simple AND gate in Verilog",akandes-verilog,content
+773,7696291,"hdl_projects/and_gate.v",31,16,"module and_gate(",akandes-verilog,content
+774,7696317,"hdl_projects/and_gate.v",49,12,"    input a,",akandes-verilog,content
+775,7696345,"hdl_projects/and_gate.v",63,12,"    input b,",akandes-verilog,content
+776,7696367,"hdl_projects/and_gate.v",77,12,"    output y",akandes-verilog,content
+777,7696385,"hdl_projects/and_gate.v",91,2,");",akandes-verilog,content
+778,7696405,"hdl_projects/and_gate.v",95,21,"    assign y = a & b;",akandes-verilog,content
+779,7696421,"hdl_projects/and_gate.v",118,9,"endmodule",akandes-verilog,content
+780,7696452,"hdl_projects/and_gate.v",129,0,"\r\nmodule and_gate_tb;",akandes-verilog,content
+781,7696468,"hdl_projects/and_gate.v",150,0,"\r\n    reg a, b;",akandes-verilog,content
+782,7696487,"hdl_projects/and_gate.v",165,0,"\r\n    wire y;",akandes-verilog,content
+783,7696504,"hdl_projects/and_gate.v",178,0,"\r\n",akandes-verilog,content
+784,7696521,"hdl_projects/and_gate.v",180,0,"\r\n    and_gate uut (.a(a), .b(b), .y(y));",akandes-verilog,content
+785,7696542,"hdl_projects/and_gate.v",221,0,"\r\n",akandes-verilog,content
+786,7696556,"hdl_projects/and_gate.v",223,0,"\r\n    initial begin",akandes-verilog,content
+787,7696587,"hdl_projects/and_gate.v",242,0,"\r\n        a = 0; b = 0;",akandes-verilog,content
+788,7696612,"hdl_projects/and_gate.v",265,0,"\r\n        #10 a = 0; b = 1;",akandes-verilog,content
+789,7696671,"hdl_projects/and_gate.v",292,0,"\r\n        #10 a = 1; b = 0;",akandes-verilog,content
+790,7696752,"hdl_projects/and_gate.v",319,0,"\r\n        #10 a = 1; b = 1;",akandes-verilog,content
+791,7696768,"hdl_projects/and_gate.v",346,0,"\r\n        #10;",akandes-verilog,content
+792,7696787,"hdl_projects/and_gate.v",360,0,"\r\n    end",akandes-verilog,content
+793,7696804,"hdl_projects/and_gate.v",369,0,"\r\nendmodule",akandes-verilog,content
+794,7696819,"hdl_projects/and_gate.v",380,0,"\r\n",akandes-verilog,content
+795,54949927,"hdl_projects/and_gate.v",0,29,"// Simple AND gate in Verilog",akandes-verilog,content
+796,54949952,"hdl_projects/and_gate.v",31,16,"module and_gate(",akandes-verilog,content
+797,54949971,"hdl_projects/and_gate.v",49,12,"    input a,",akandes-verilog,content
+798,54949991,"hdl_projects/and_gate.v",63,12,"    input b,",akandes-verilog,content
+799,54950009,"hdl_projects/and_gate.v",77,12,"    output y",akandes-verilog,content
+800,54950024,"hdl_projects/and_gate.v",91,2,");",akandes-verilog,content
+801,54950039,"hdl_projects/and_gate.v",95,21,"    assign y = a & b;",akandes-verilog,content
+802,54950056,"hdl_projects/and_gate.v",118,9,"endmodule",akandes-verilog,content
+803,54950091,"hdl_projects/and_gate.v",131,19,"module and_gate_tb;",akandes-verilog,content
+804,54950106,"hdl_projects/and_gate.v",152,13,"    reg a, b;",akandes-verilog,content
+805,54950124,"hdl_projects/and_gate.v",167,11,"    wire y;",akandes-verilog,content
+806,54950155,"hdl_projects/and_gate.v",182,39,"    and_gate uut (.a(a), .b(b), .y(y));",akandes-verilog,content
+807,54950189,"hdl_projects/and_gate.v",225,17,"    initial begin",akandes-verilog,content
+808,54950205,"hdl_projects/and_gate.v",244,21,"        a = 0; b = 0;",akandes-verilog,content
+809,54950222,"hdl_projects/and_gate.v",267,25,"        #10 a = 0; b = 1;",akandes-verilog,content
+810,54950238,"hdl_projects/and_gate.v",294,25,"        #10 a = 1; b = 0;",akandes-verilog,content
+811,54950257,"hdl_projects/and_gate.v",321,25,"        #10 a = 1; b = 1;",akandes-verilog,content
+812,54950272,"hdl_projects/and_gate.v",348,12,"        #10;",akandes-verilog,content
+813,54950289,"hdl_projects/and_gate.v",362,7,"    end",akandes-verilog,content
+814,54950305,"hdl_projects/and_gate.v",371,9,"endmodule",akandes-verilog,content
+815,54950340,"hdl_projects/and_gate.v",382,0,"\r\n$ ./pandoc --version",akandes-verilog,content
+816,54950356,"hdl_projects/and_gate.v",404,0,"\r\npandoc 2.14.0",akandes-verilog,content
+817,54950376,"hdl_projects/and_gate.v",419,0,"\r\nCompiled with pandoc-types 1.22.0.1",akandes-verilog,content
+818,54950391,"hdl_projects/and_gate.v",456,0,"\r\nSyntax highlighting version 110",akandes-verilog,content
+819,54950407,"hdl_projects/and_gate.v",489,0,"\r\n$",akandes-verilog,content
+820,54950423,"hdl_projects/and_gate.v",492,0,"\r\n",akandes-verilog,content
