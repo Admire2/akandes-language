@@ -3,3 +3,25 @@ dist
 node_modules
 .vscode-test/
 *.vsix
+# Python ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+*.venv
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+*.egg-info/
+.eggs/
+# VS Code settings
+.vscode/
+# OS files
+.DS_Store
+Thumbs.db
+# Secrets
+.env
+secrets.json

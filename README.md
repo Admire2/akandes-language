@@ -106,4 +106,28 @@ launch_agentic_web_gui()
 
 ---
 
+## 🚀 Getting Started
+
+1. **Clone the repository:**
+   ```
+   git clone https://github.com/Admire2/akandes-language.git
+   cd akandes-language/workspace/akandes_lsp
+   ```
+2. **Install dependencies:**
+   ```
+   pip install -r requirements.txt
+   ```
+3. **Run the CLI:**
+   ```
+   python chips.py [args]
+   ```
+4. **Run the Web UI:**
+   ```
+   python chips.py --web
+   ```
+
+For more, see the full documentation and examples in the repo.
+
+---
+
 For workspace-specific Copilot instructions, see `.github/copilot-instructions.md`.
