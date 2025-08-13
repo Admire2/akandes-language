@@ -5,7 +5,7 @@ on:
     branches:
       - main
     tags:
-      - "v*.*.*"
+      - 'v*.*.*'
 
 jobs:
   release:
@@ -17,7 +17,101 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install flake8 pytest sphinx
+
+      - name: Run tests
+        run: pytest
+
+      - name: Lint with flake8
+        run: flake8 .
+
+      - name: Build docs
+        run: |
+          cd docs
+          make html
+
+      - name: Upload documentation artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation
+          path: docs/_build/html
+
+      - name: Deploy docs to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/_build/html
+          publish_branch: gh-pages
+          force_orphan: true
+
+      - name: Bump version and push tag
+        run: python bump_version_and_release.py
+
+      - name: Read release notes
+        run: |
+          echo "RELEASE_BODY<<EOF" >> $GITHUB_ENV
+          cat RELEASE_NOTES.md >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body: ${{ env.RELEASE_BODY }}
+          files: |
+            dist/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Notify Slack
+        uses: slackapi/slack-github-action@v1.25.0
+        with:
+          payload: |
+            {
+              "text": "🚀 New release ${{ github.ref_name }} published! <${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ github.ref_name }}>",
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Notify Discord
+        uses: Ilshidur/action-discord@master
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          message: "🚀 New release ${{ github.ref_name }} published! <${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ github.ref_name }}>"
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+
+    runs-on: ubuntu-latest
+
+name: Release
+
+        with:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*.*.*'
+
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
@@ -44,23 +138,19 @@ jobs:
           name: documentation
           path: docs/_build/html
 
+      - name: Deploy docs to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/_build/html
+          publish_branch: gh-pages
+          force_orphan: true
+
       - name: Bump version and push tag
         run: |
           python bump_version_and_release.py
 
-      - name: Build package
-        run: |
-          python setup.py sdist bdist_wheel
-
       - name: Read release notes
-        id: notes
-        run: |
-          echo "RELEASE_BODY<<EOF" >> $GITHUB_ENV
-          cat RELEASE_NOTES.md >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-
-      - name: Read release notes
-        id: notes
         run: |
           echo "RELEASE_BODY<<EOF" >> $GITHUB_ENV
           cat RELEASE_NOTES.md >> $GITHUB_ENV
@@ -91,8 +181,3 @@ jobs:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           message: "🚀 New release ${{ github.ref_name }} published! <${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ github.ref_name }}>"
 
-      - name: Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: ${{ secrets.PYPI_API_TOKEN }}

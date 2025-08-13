@@ -105,27 +105,6 @@ def main() -> None:
     subprocess.check_call(['git', 'tag', new_version])
     subprocess.check_call(['git', 'push', 'origin', new_version])
 
-    # Build and upload documentation
-    subprocess.check_call(['pip', 'install', 'sphinx'])
-    subprocess.check_call(['make', 'html'], cwd='docs')
-    subprocess.check_call(['actions/upload-artifact@v4', '--name', 'documentation', '--path', 'docs/_build/html'])
-
-    # Publish to PyPI
-    subprocess.check_call(['python', 'setup.py', 'sdist', 'bdist_wheel'])
-    subprocess.check_call(['twine', 'upload', 'dist/*', '--username', '__token__', '--password', '${{ secrets.PYPI_API_TOKEN }}'])
-
-    # Run tests
-    subprocess.check_call(['pytest'])
-
-    # Lint with flake8
-    subprocess.check_call(['pip', 'install', 'flake8'])
-    subprocess.check_call(['flake8', '.'])
-
-    # Notify Discord
-    subprocess.check_call(['curl', '-X', 'POST', '-H', 'Content-Type: application/json', '-d', '{"content": "🚀 New release ' + new_version + ' published! <' + 'https://github.com/' + 'your_github_repo' + '/releases/tag/' + new_version + '>' + '"}', '${{ secrets.DISCORD_WEBHOOK }}'])
-    
-    # Notify Slack
-    subprocess.check_call(['curl', '-X', 'POST', '-H', 'Content-Type: application/json', '-d', '{"text": "🚀 New release ' + new_version + ' published! <' + 'https://github.com/' + 'your_github_repo' + '/releases/tag/' + new_version + '>' + '"}', '${{ secrets.SLACK_WEBHOOK_URL }}'])
 
 if __name__ == '__main__':
     main()
