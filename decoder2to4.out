@@ -1,0 +1,28 @@
+#! /d/a/fpga-toolchain-build/fpga-toolchain-build/iverilog/_install/bin/vvp
+:ivl_version "11.0 (stable)" "(d3b0992)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\system.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\va_math.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\v2009.vpi";
+S_000001f32bb26c20 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_000001f32bb26db0 .scope module, "decoder2to4" "decoder2to4" 3 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 2 "a";
+    .port_info 1 /OUTPUT 4 "y";
+L_000001f32bb67fb8 .functor BUFT 1, C4<0001>, C4<0>, C4<0>, C4<0>;
+v000001f32b8b6fc0_0 .net/2u *"_ivl_0", 3 0, L_000001f32bb67fb8;  1 drivers
+o000001f32bb26f78 .functor BUFZ 2, C4<zz>; HiZ drive
+v000001f32b8b6c90_0 .net "a", 1 0, o000001f32bb26f78;  0 drivers
+v000001f32b8be070_0 .net "y", 3 0, L_000001f32b8be110;  1 drivers
+L_000001f32b8be110 .shift/l 4, L_000001f32bb67fb8, o000001f32bb26f78;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "hdl_projects\decoder2to4.sv";

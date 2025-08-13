@@ -1,0 +1,2 @@
+# Akandes Language requirements
+flask

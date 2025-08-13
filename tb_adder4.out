@@ -1,0 +1,65 @@
+#! /d/a/fpga-toolchain-build/fpga-toolchain-build/iverilog/_install/bin/vvp
+:ivl_version "11.0 (stable)" "(d3b0992)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\system.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\va_math.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\v2009.vpi";
+S_0000024668f0bc40 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0000024668f0bdd0 .scope module, "tb_adder4" "tb_adder4" 3 1;
+ .timescale 0 0;
+v0000024668f51f60_0 .var "a", 3 0;
+v0000024668f52820_0 .var "b", 3 0;
+v0000024668f52000_0 .net "carry", 0 0, L_0000024668f52640;  1 drivers
+v0000024668f525a0_0 .net "sum", 3 0, L_0000024668f52a00;  1 drivers
+S_0000024668f78d20 .scope module, "uut" "adder4" 3 5, 4 2 0, S_0000024668f0bdd0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /OUTPUT 4 "sum";
+    .port_info 3 /OUTPUT 1 "carry";
+v0000024668f06b70_0 .net *"_ivl_0", 4 0, L_0000024668f528c0;  1 drivers
+L_00000246690100d0 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000024668f52320_0 .net *"_ivl_12", 0 0, L_00000246690100d0;  1 drivers
+v0000024668f51e20_0 .net *"_ivl_13", 4 0, L_0000024668f52960;  1 drivers
+v0000024668f52b40_0 .net *"_ivl_5", 4 0, L_0000024668f51c40;  1 drivers
+L_0000024669010088 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0000024668f526e0_0 .net *"_ivl_8", 0 0, L_0000024669010088;  1 drivers
+v0000024668f523c0_0 .net *"_ivl_9", 4 0, L_0000024668f51ce0;  1 drivers
+v0000024668f51ec0_0 .net "a", 3 0, v0000024668f51f60_0;  1 drivers
+v0000024668f51d80_0 .net "b", 3 0, v0000024668f52820_0;  1 drivers
+v0000024668f52780_0 .net "carry", 0 0, L_0000024668f52640;  alias, 1 drivers
+v0000024668f520a0_0 .net "sum", 3 0, L_0000024668f52a00;  alias, 1 drivers
+L_0000024668f52640 .part L_0000024668f528c0, 4, 1;
+L_0000024668f52a00 .part L_0000024668f528c0, 0, 4;
+L_0000024668f528c0 .part L_0000024668f52960, 0, 5;
+L_0000024668f51c40 .concat [ 4 1 0 0], v0000024668f51f60_0, L_0000024669010088;
+L_0000024668f51ce0 .concat [ 4 1 0 0], v0000024668f52820_0, L_00000246690100d0;
+L_0000024668f52960 .arith/sum 5, L_0000024668f51c40, L_0000024668f51ce0;
+    .scope S_0000024668f0bdd0;
+T_0 ;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v0000024668f51f60_0, 0, 4;
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0000024668f52820_0, 0, 4;
+    %delay 1, 0;
+    %vpi_call/w 3 9 "$display", "sum = %d, carry = %b", v0000024668f525a0_0, v0000024668f52000_0 {0 0 0};
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0000024668f51f60_0, 0, 4;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0000024668f52820_0, 0, 4;
+    %delay 1, 0;
+    %vpi_call/w 3 12 "$display", "sum = %d, carry = %b", v0000024668f525a0_0, v0000024668f52000_0 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "hdl_projects\tb_adder4.sv";
+    "hdl_projects\adder4.sv";

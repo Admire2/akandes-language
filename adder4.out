@@ -1,0 +1,44 @@
+#! /d/a/fpga-toolchain-build/fpga-toolchain-build/iverilog/_install/bin/vvp
+:ivl_version "11.0 (stable)" "(d3b0992)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\system.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\va_math.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\v2009.vpi";
+S_000001be293c6890 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_000001be293c6a20 .scope module, "adder4" "adder4" 3 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /OUTPUT 4 "sum";
+    .port_info 3 /OUTPUT 1 "carry";
+v000001be293c6fc0_0 .net *"_ivl_0", 4 0, L_000001be29328240;  1 drivers
+L_000001be29329070 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000001be293c6bb0_0 .net *"_ivl_12", 0 0, L_000001be29329070;  1 drivers
+v000001be293c6c50_0 .net *"_ivl_13", 4 0, L_000001be293286a0;  1 drivers
+v000001be293ce740_0 .net *"_ivl_5", 4 0, L_000001be29328ce0;  1 drivers
+L_000001be29329028 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v000001be293ce7e0_0 .net *"_ivl_8", 0 0, L_000001be29329028;  1 drivers
+v000001be293ce880_0 .net *"_ivl_9", 4 0, L_000001be29328a60;  1 drivers
+o000001be292e70b8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v000001be293ce920_0 .net "a", 3 0, o000001be292e70b8;  0 drivers
+o000001be292e70e8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v000001be293ce9c0_0 .net "b", 3 0, o000001be292e70e8;  0 drivers
+v000001be293cea60_0 .net "carry", 0 0, L_000001be293cec30;  1 drivers
+v000001be293ceb90_0 .net "sum", 3 0, L_000001be29328100;  1 drivers
+L_000001be293cec30 .part L_000001be29328240, 4, 1;
+L_000001be29328100 .part L_000001be29328240, 0, 4;
+L_000001be29328240 .part L_000001be293286a0, 0, 5;
+L_000001be29328ce0 .concat [ 4 1 0 0], o000001be292e70b8, L_000001be29329028;
+L_000001be29328a60 .concat [ 4 1 0 0], o000001be292e70e8, L_000001be29329070;
+L_000001be293286a0 .arith/sum 5, L_000001be29328ce0, L_000001be29328a60;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "hdl_projects\adder4.sv";

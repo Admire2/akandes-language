@@ -1,4 +1,4 @@
-{
+cd C:\Users\great\OneDrive\Documents\AKANDES_LANGUAGE_INSTALLER\workspace\workspace3\workspace{
   "Print Statement": {
     "prefix": "print",
     "body": ["print('$1')"],

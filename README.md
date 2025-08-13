@@ -81,4 +81,29 @@ This is a VS Code extension scaffolded with Yeoman and Generator-Code. It is int
 
 ---
 
+## 🚀 Quick Start
+
+### Run the CLI
+
+```
+cd workspace/akandes_lsp
+python chips.py [args]
+```
+
+### Run the Web UI
+
+```
+cd workspace/akandes_lsp
+python chips.py --web
+```
+
+Or, from Python:
+
+```python
+from chips import launch_agentic_web_gui
+launch_agentic_web_gui()
+```
+
+---
+
 For workspace-specific Copilot instructions, see `.github/copilot-instructions.md`.

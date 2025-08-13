@@ -14,11 +14,26 @@
   "categories": [
     "Programming Languages"
   ],
+  "activationEvents": [
+    "onCommand:AkandeChips.helloWorld",
+    "onCommand:AkandeChips.selectBackend",
+    "onCommand:AkandeChips.runGHDLSim"
+  ],
   "contributes": {
     "commands": [
       {
         "command": "AkandeChips.helloWorld",
         "title": "Hello World"
+      }
+      ,
+      {
+        "command": "AkandeChips.selectBackend",
+        "title": "Select Backend and Generate HDL"
+      }
+      ,
+      {
+        "command": "AkandeChips.runGHDLSim",
+        "title": "Run GHDL Simulation on VHDL Files"
       }
     ],
     "languages": [
@@ -80,16 +95,4 @@
     "vscode-languageclient": "^9.0.1",
     "electron-store": "^8.1.0"
   }
-      }
-    ],
-    "grammars": [
-      {
-        "language": "akandes",
-        "scopeName": "source.akandes",
-        "path": "./syntaxes/akandes.tmLanguage.json"
-      }
-    ]
-  }
 }
-
->>>>>>> 3e525547259f62b67e569abc2afdefb7fc1099cd

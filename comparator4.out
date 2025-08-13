@@ -1,0 +1,35 @@
+#! /d/a/fpga-toolchain-build/fpga-toolchain-build/iverilog/_install/bin/vvp
+:ivl_version "11.0 (stable)" "(d3b0992)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\system.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\va_math.vpi";
+:vpi_module "C:\PROGRA~3\CHOCOL~1\lib\iverilog\tools\lib\ivl\v2009.vpi";
+S_0000020478da6890 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0000020478da6a20 .scope module, "comparator4" "comparator4" 3 2;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "a";
+    .port_info 1 /INPUT 4 "b";
+    .port_info 2 /OUTPUT 1 "eq";
+    .port_info 3 /OUTPUT 1 "gt";
+    .port_info 4 /OUTPUT 1 "lt";
+o0000020478cc6fa8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0000020478daa7e0_0 .net "a", 3 0, o0000020478cc6fa8;  0 drivers
+o0000020478cc6fd8 .functor BUFZ 4, C4<zzzz>; HiZ drive
+v0000020478da94b0_0 .net "b", 3 0, o0000020478cc6fd8;  0 drivers
+v0000020478da6bb0_0 .net "eq", 0 0, L_0000020478dae260;  1 drivers
+v0000020478da6c50_0 .net "gt", 0 0, L_0000020478dae300;  1 drivers
+v0000020478dae1c0_0 .net "lt", 0 0, L_0000020478dae3a0;  1 drivers
+L_0000020478dae260 .cmp/eq 4, o0000020478cc6fa8, o0000020478cc6fd8;
+L_0000020478dae300 .cmp/gt 4, o0000020478cc6fa8, o0000020478cc6fd8;
+L_0000020478dae3a0 .cmp/gt 4, o0000020478cc6fd8, o0000020478cc6fa8;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "hdl_projects\comparator4.sv";

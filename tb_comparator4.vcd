@@ -1,0 +1,60 @@
+$date
+  Mon Aug 11 15:58:14 2025
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module tb_comparator4 $end
+$var reg 4 ! a[3:0] $end
+$var reg 4 " b[3:0] $end
+$var reg 1 # eq $end
+$var reg 1 $ gt $end
+$var reg 1 % lt $end
+$scope module uut $end
+$var reg 4 & a[3:0] $end
+$var reg 4 ' b[3:0] $end
+$var reg 1 ( eq $end
+$var reg 1 ) gt $end
+$var reg 1 * lt $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0101 !
+b0101 "
+1#
+0$
+0%
+b0101 &
+b0101 '
+1(
+0)
+0*
+#1000000
+b1000 !
+b0111 "
+0#
+1$
+b1000 &
+b0111 '
+0(
+1)
+#2000000
+b0010 !
+b0100 "
+0$
+1%
+b0010 &
+b0100 '
+0)
+1*
+#3000000
