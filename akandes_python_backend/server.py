@@ -1,4 +1,3 @@
-
 # Minimal, version-agnostic pygls LSP server for AkandeChips
 from pygls.server import LanguageServer
 from pygls.lsp.types import (
@@ -8,7 +7,7 @@ from pygls.lsp.types import (
 
 class AkandeLanguageServer(LanguageServer):
     def __init__(self):
-        super().__init__("akandechips-lsp", "0.1.0")
+        super().__init__()
 
 server = AkandeLanguageServer()
 
@@ -63,14 +62,7 @@ def hover(ls, params):
         return Hover(contents=markup)
     return None
 
-@server.feature('textDocument/completion')
-def completions(ls, params):
-    items = [
-        CompletionItem(label='print', detail='Print statement'),
-        CompletionItem(label='def', detail='Function definition'),
-        CompletionItem(label='if', detail='If statement')
-    ]
-    return CompletionList(is_incomplete=False, items=items)
+## Removed duplicate completion feature registration
 
 if __name__ == '__main__':
     server.start_io()
