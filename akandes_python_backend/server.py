@@ -4,6 +4,7 @@ from pygls.lsp.types import (
     InitializeParams, TextDocumentSyncKind, TextDocumentSyncOptions, DidOpenTextDocumentParams,
     CompletionParams, CompletionItem, CompletionList, Diagnostic, DiagnosticSeverity, Position, Range, Hover, MarkupContent
 )
+)
 
 class AkandeLanguageServer(LanguageServer):
     def __init__(self):
@@ -47,13 +48,36 @@ def completions(ls, params):
     keywords = [
         'chip', 'input', 'output', 'connect', 'simulate', 'clock', 'reset', 'wire', 'module', 'testbench'
     ]
-    items = [CompletionItem(label=kw, kind=1, detail='AkandeChips keyword') for kw in keywords]
+    doc = ls.workspace.get_document(params.textDocument.uri)
+    # pygls Document may not have word_at_position, so fallback to manual extraction
+    try:
+        current_word = doc.word_at_position(params.position)
+    except AttributeError:
+        # Fallback: extract word manually
+        line = doc.lines[params.position.line]
+        prefix = line[:params.position.character]
+        import re
+        match = re.search(r'(\w+)$', prefix)
+        current_word = match.group(1) if match else ''
+    items = []
+    if current_word and current_word.startswith('chip'):
+        items.append(CompletionItem(label='chips', kind=1, detail='AkandeChips keyword'))
+        items.append(CompletionItem(label='AkandeChips', kind=7, detail='AkandeChips class'))
+    # Always include the default keywords except 'chip'
+    items.extend([CompletionItem(label=kw, kind=1, detail='AkandeChips keyword') for kw in keywords if kw != 'chip'])
     return CompletionList(is_incomplete=False, items=items)
 
 @server.feature('textDocument/hover')
 def hover(ls, params):
     doc = ls.workspace.get_document(params.textDocument.uri)
-    word = doc.word_at_position(params.position)
+    try:
+        word = doc.word_at_position(params.position)
+    except AttributeError:
+        line = doc.lines[params.position.line]
+        prefix = line[:params.position.character]
+        import re
+        match = re.search(r'(\w+)$', prefix)
+        word = match.group(1) if match else ''
     try:
         markup = MarkupContent(kind='markdown', value=f'**{word}**: AkandeChips language keyword.')
     except Exception:
