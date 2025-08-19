@@ -46,7 +46,7 @@ def did_open(ls, params):
 def completions(ls, params):
     # AkandeChips language keywords
     keywords = [
-        'chip', 'input', 'output', 'connect', 'simulate', 'clock', 'reset', 'wire', 'module', 'testbench'
+        'chip', 'input', 'output', 'connect', 'simulate', 'clock', 'reset', 'wire', 'module', 'testbench', 'AkandeAI'
     ]
     doc = ls.workspace.get_document(params.textDocument.uri)
     # pygls Document may not have word_at_position, so fallback to manual extraction
@@ -63,6 +63,12 @@ def completions(ls, params):
     if current_word and current_word.startswith('chip'):
         items.append(CompletionItem(label='chips', kind=1, detail='AkandeChips keyword'))
         items.append(CompletionItem(label='AkandeChips', kind=7, detail='AkandeChips class'))
+        items.append(CompletionItem(
+            label='AkandeAI',
+            kind=7,
+            detail='AkandeAI: Artificial Intelligence engine for Akande language (code completion, suggestions, like GitHub Copilot)',
+            documentation='AkandeAI is the artificial intelligence engine for the Akande language. It provides code completion, smart suggestions, and works like GitHub Copilot for AkandeChips.'
+        ))
     # Always include the default keywords except 'chip'
     items.extend([CompletionItem(label=kw, kind=1, detail='AkandeChips keyword') for kw in keywords if kw != 'chip'])
     return CompletionList(is_incomplete=False, items=items)
