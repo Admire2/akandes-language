@@ -42,12 +42,21 @@ def did_open(ls, params):
                 ))
     ls.publish_diagnostics(params.textDocument.uri, diagnostics)
 
+@server.feature('textDocument/completion')
+def completions(ls, params):
+    # AkandeChips language keywords
+    keywords = [
+        'chip', 'input', 'output', 'connect', 'simulate', 'clock', 'reset', 'wire', 'module', 'testbench'
+    ]
+    items = [CompletionItem(label=kw, kind=1, detail='AkandeChips keyword') for kw in keywords]
+    return CompletionList(is_incomplete=False, items=items)
+
 @server.feature('textDocument/hover')
 def hover(ls, params):
     doc = ls.workspace.get_document(params.textDocument.uri)
     word = doc.word_at_position(params.position)
     try:
-        markup = MarkupContent(kind='markdown', value='**print**: Output text to the console.')
+        markup = MarkupContent(kind='markdown', value=f'**{word}**: AkandeChips language keyword.')
     except Exception:
         markup = {'kind': 'markdown', 'value': '**print**: Output text to the console.'}
     if word == 'print':
