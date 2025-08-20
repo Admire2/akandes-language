@@ -20,7 +20,7 @@
     "onCommand:AkandeChips.runGHDLSim"
   ],
   "contributes": {
-    "commands": [
+  "commands": [
       {
         "command": "AkandeChips.helloWorld",
         "title": "Hello World"
@@ -62,7 +62,19 @@
         "language": "akandechips",
         "path": "./snippets/akandechips.code-snippets"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "AkandeAI Settings",
+      "properties": {
+        "akandeAI.provider": {
+          "type": "string",
+          "default": "all",
+          "enum": ["all", "openai", "anthropic", "gemini", "copilot"],
+          "description": "Choose the AI provider for AkandeAI code completion: all, OpenAI, Anthropic Claude, Google Gemini, or GitHub Copilot."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",

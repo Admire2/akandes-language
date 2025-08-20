@@ -45,30 +45,106 @@ def did_open(ls, params):
 @server.feature('textDocument/completion')
 def completions(ls, params):
     # AkandeChips language keywords
+    import requests
     keywords = [
         'chip', 'input', 'output', 'connect', 'simulate', 'clock', 'reset', 'wire', 'module', 'testbench', 'AkandeAI'
     ]
     doc = ls.workspace.get_document(params.textDocument.uri)
-    # pygls Document may not have word_at_position, so fallback to manual extraction
+    # Get current line and prefix
     try:
         current_word = doc.word_at_position(params.position)
     except AttributeError:
-        # Fallback: extract word manually
         line = doc.lines[params.position.line]
         prefix = line[:params.position.character]
         import re
         match = re.search(r'(\w+)$', prefix)
         current_word = match.group(1) if match else ''
     items = []
-    if current_word and current_word.startswith('chip'):
-        items.append(CompletionItem(label='chips', kind=1, detail='AkandeChips keyword'))
-        items.append(CompletionItem(label='AkandeChips', kind=7, detail='AkandeChips class'))
-        items.append(CompletionItem(
-            label='AkandeAI',
-            kind=7,
-            detail='AkandeAI: Artificial Intelligence engine for Akande language (code completion, suggestions, like GitHub Copilot)',
-            documentation='AkandeAI is the artificial intelligence engine for the Akande language. It provides code completion, smart suggestions, and works like GitHub Copilot for AkandeChips.'
-        ))
+    # --- AkandeAI Multi-Provider Integration ---
+    context_window = 20
+    start_line = max(0, params.position.line - context_window)
+    file_context = '\n'.join(doc.lines[start_line:params.position.line+1])
+    prompt = (
+        "You are AkandeAI, the AI engine for AkandeChips language. "
+        "Given the following code context, suggest the next line or code completion in AkandeChips style. "
+        "Respond only with the code suggestion.\n"
+        f"Context:\n{file_context}\nCompletion:"
+    )
+    # Provider API keys
+    openai_api_key = "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"
+    anthropic_api_key = "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"
+    google_api_key = "AIzaSyDBq-TLoYpCeFzIuHWtrox-B9uj2nCUFOs"
+    # Provider selection: 'openai', 'anthropic', 'gemini', or 'all'
+    ai_provider = 'all'  # Change to 'openai', 'anthropic', 'gemini', or 'all' for options
+    # Collect completions from all providers
+    def get_openai_completions():
+        try:
+            response = requests.post(
+                "https://api.openai.com/v1/completions",
+                headers={"Authorization": f"Bearer {openai_api_key}", "Content-Type": "application/json"},
+                json={
+                    "model": "text-davinci-003",
+                    "prompt": prompt,
+                    "max_tokens": 32,
+                    "n": 3,
+                    "stop": None,
+                    "temperature": 0.3
+                }
+            )
+            if response.status_code == 200:
+                completions = response.json().get("choices", [])
+                return [c.get("text", "").strip() for c in completions if c.get("text", "").strip()]
+        except Exception:
+            return []
+        return []
+    def get_anthropic_completions():
+        try:
+            response = requests.post(
+                "https://api.anthropic.com/v1/complete",
+                headers={
+                    "x-api-key": anthropic_api_key,
+                    "Content-Type": "application/json"
+                },
+                json={
+                    "model": "claude-2",
+                    "prompt": prompt,
+                    "max_tokens_to_sample": 32,
+                    "stop_sequences": ["\n"]
+                }
+            )
+            if response.status_code == 200:
+                completion = response.json().get("completion", "").strip()
+                return [completion] if completion else []
+        except Exception:
+            return []
+        return []
+    def get_gemini_completions():
+        try:
+            response = requests.post(
+                f"https://generativelanguage.googleapis.com/v1beta2/models/gemini-pro:generateText?key={google_api_key}",
+                headers={"Content-Type": "application/json"},
+                json={
+                    "prompt": {"text": prompt},
+                    "maxOutputTokens": 32
+                }
+            )
+            if response.status_code == 200:
+                candidates = response.json().get("candidates", [])
+                return [c.get("output", "").strip() for c in candidates if c.get("output", "").strip()]
+        except Exception:
+            return []
+        return []
+    # Merge completions
+    ai_completions = []
+    if ai_provider in ('openai', 'all'):
+        ai_completions += get_openai_completions()
+    if ai_provider in ('anthropic', 'all'):
+        ai_completions += get_anthropic_completions()
+    if ai_provider in ('gemini', 'all'):
+        ai_completions += get_gemini_completions()
+    # Add AI completions to items
+    for suggestion in ai_completions:
+        items.append(CompletionItem(label=suggestion, kind=7, detail="AkandeAI (AI completion)", documentation="Suggested by AkandeAI (multi-provider)", sort_text="100"))
     # Always include the default keywords except 'chip'
     items.extend([CompletionItem(label=kw, kind=1, detail='AkandeChips keyword') for kw in keywords if kw != 'chip'])
     return CompletionList(is_incomplete=False, items=items)
