@@ -61,5 +61,38 @@ def test_cli_list_tools_runs():
     # Just check that it runs without error
     chips.cli_list_tools()
 
+def get_ai_completion(provider, prompt, api_key):
+    if provider == "openai":
+        # ...call OpenAI API...
+        pass
+    elif provider == "anthropic":
+        # ...call Anthropic API...
+        pass
+    elif provider == "gemini":
+        # ...call Gemini API...
+        pass
+    elif provider == "copilot":
+        # ...call Copilot API...
+        pass
+    else:
+        raise ValueError("Unknown provider")
+
 if __name__ == "__main__":
     pytest.main()
+
+{
+  "contributes": {
+    "configuration": {
+      "properties": {
+        "akandeAI.provider": {
+          "type": "string",
+          "description": "Select AI provider"
+        },
+        "akandeAI.enterpriseLicense": {
+          "type": "string",
+          "description": "Enter enterprise license key"
+        }
+      }
+    }
+  }
+}

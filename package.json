@@ -72,6 +72,11 @@
           "default": "all",
           "enum": ["all", "openai", "anthropic", "gemini", "copilot"],
           "description": "Choose the AI provider for AkandeAI code completion: all, OpenAI, Anthropic Claude, Google Gemini, or GitHub Copilot."
+        },
+        "akandeAI.enterpriseLicense": {
+          "type": "string",
+          "default": "",
+          "description": "Enter your AkandeAI Enterprise Edition license key to unlock premium features."
         }
       }
     }
