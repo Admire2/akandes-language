@@ -19,5 +19,15 @@ Usage:
 See README.md for full documentation and examples.
 """
 
+
 # chips.py - main entry point for Akandes Language platform
-# ...existing code...
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+	return "Welcome to Akandes Language Web UI!"
+
+if __name__ == "__main__":
+	app.run(host="127.0.0.1", port=5000, debug=True)
